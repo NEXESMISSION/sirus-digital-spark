@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Play, Camera, Video, PenTool, Star, Users, Globe } from "lucide-react";
@@ -92,7 +93,7 @@ const Portfolio = () => {
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-lg z-50 border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <Link to="/" className="text-3xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
               Sirus
             </Link>
             <Link to="/">
@@ -110,10 +111,10 @@ const Portfolio = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-cyan-900/50"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-6xl font-black mb-6 bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent font-tajawal">
+            <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent font-tajawal">
               معرض أعمالنا
             </h1>
-            <p className="text-2xl text-gray-300 mb-8 font-tajawal">
+            <p className="text-2xl text-gray-300 mb-8 font-tajawal font-light">
               مشاريع حقيقية، نتائج استثنائية، وقصص نجاح ملهمة
             </p>
           </div>
@@ -128,10 +129,10 @@ const Portfolio = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                className={`flex items-center px-5 py-2.5 rounded-full text-base font-medium transition-all duration-300 transform hover:scale-105 border ${
                   activeCategory === category.id
-                    ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                    ? 'bg-cyan-400 border-cyan-400 text-slate-900 shadow-lg'
+                    : 'border-white/20 bg-transparent text-gray-300 hover:bg-white/10 hover:border-white/30'
                 }`}
               >
                 <category.icon className="ml-2 h-5 w-5" />
@@ -160,12 +161,12 @@ const Portfolio = () => {
                         <Play className="h-8 w-8 text-white" />
                       </div>
                     </div>
-                    <div className="absolute top-4 right-4 bg-gradient-to-r from-cyan-500 to-purple-600 px-3 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute top-4 right-4 bg-gradient-to-r from-cyan-500 to-purple-600 px-3 py-1 rounded-full text-sm font-medium">
                       {project.type}
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-gradient">
+                    <h3 className="text-xl font-semibold text-white mb-2 transition-colors duration-300 group-hover:text-gradient">
                       {project.title}
                     </h3>
                     <p className="text-gray-300 text-sm leading-relaxed">
@@ -184,10 +185,10 @@ const Portfolio = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-purple-900/50"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-semibold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
               هل أعجبك ما رأيت؟
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-gray-300 mb-8 font-light">
               دعنا نبدأ العمل على مشروعك القادم وننشئ شيئاً استثنائياً معاً
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -210,7 +211,7 @@ const Portfolio = () => {
       <footer className="py-12 bg-black/50 border-t border-white/10">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            <div className="text-3xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
               Sirus
             </div>
             <p className="text-gray-400 mb-6">© 2025 Sirus. جميع الحقوق محفوظة.</p>
