@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -11,6 +12,8 @@ const Index = () => {
         phone: '',
         message: ''
     });
+
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -81,57 +84,89 @@ const Index = () => {
 
     return (
         <div className="text-right bg-background text-foreground">
-            {/* Header Section */}
-            <header className="bg-card shadow-lg py-4 sticky top-0 z-20 border-b border-border">
-                <div className="container mx-auto px-6 flex justify-between items-center">
-                    <a href="#" className="text-4xl font-bold font-cairo text-gradient rounded-lg p-2 transform hover:scale-105 transition-transform duration-300">Sirus</a>
-                    <nav>
-                        <ul className="flex space-x-6 space-x-reverse">
-                            <li><a href="#about" className="text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">من نحن</a></li>
-                            <li><a href="#services" className="text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">خدماتنا</a></li>
-                            <li><Link to="/portfolio" className="text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">معرض أعمالنا</Link></li>
-                            <li><a href="#why-us" className="text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">لماذا Sirus؟</a></li>
-                            <li><a href="#contact" className="text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">تواصل معنا</a></li>
+            {/* Header Section with Mobile Menu */}
+            <header className="bg-card shadow-lg py-3 sm:py-4 sticky top-0 z-20 border-b border-border">
+                <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+                    <a href="#" className="text-2xl sm:text-3xl lg:text-4xl font-bold font-cairo text-gradient rounded-lg p-2 transform hover:scale-105 transition-transform duration-300">Sirus</a>
+                    
+                    {/* Desktop Navigation */}
+                    <nav className="hidden lg:block">
+                        <ul className="flex space-x-4 xl:space-x-6 space-x-reverse">
+                            <li><a href="#about" className="text-sm xl:text-base text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">من نحن</a></li>
+                            <li><a href="#services" className="text-sm xl:text-base text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">خدماتنا</a></li>
+                            <li><Link to="/portfolio" className="text-sm xl:text-base text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">معرض أعمالنا</Link></li>
+                            <li><a href="#why-us" className="text-sm xl:text-base text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">لماذا Sirus؟</a></li>
+                            <li><a href="#contact" className="text-sm xl:text-base text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">تواصل معنا</a></li>
                         </ul>
                     </nav>
+
+                    {/* Mobile Menu Button */}
+                    <button 
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+                    >
+                        <div className="w-6 h-6 flex flex-col justify-center items-center">
+                            <span className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+                            <span className={`block w-5 h-0.5 bg-foreground mt-1 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                            <span className={`block w-5 h-0.5 bg-foreground mt-1 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+                        </div>
+                    </button>
                 </div>
+
+                {/* Mobile Navigation */}
+                {mobileMenuOpen && (
+                    <div className="lg:hidden bg-card border-t border-border">
+                        <nav className="container mx-auto px-4 py-4">
+                            <ul className="space-y-3">
+                                <li><a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-muted-foreground hover:text-primary font-medium py-2 transition-colors">من نحن</a></li>
+                                <li><a href="#services" onClick={() => setMobileMenuOpen(false)} className="block text-muted-foreground hover:text-primary font-medium py-2 transition-colors">خدماتنا</a></li>
+                                <li><Link to="/portfolio" onClick={() => setMobileMenuOpen(false)} className="block text-muted-foreground hover:text-primary font-medium py-2 transition-colors">معرض أعمالنا</Link></li>
+                                <li><a href="#why-us" onClick={() => setMobileMenuOpen(false)} className="block text-muted-foreground hover:text-primary font-medium py-2 transition-colors">لماذا Sirus؟</a></li>
+                                <li><a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-muted-foreground hover:text-primary font-medium py-2 transition-colors">تواصل معنا</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                )}
             </header>
 
-            {/* Hero Section */}
-            <section className="relative h-[600px] md:h-[700px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden">
+            {/* Hero Section with Mobile Optimization */}
+            <section className="relative h-[500px] sm:h-[600px] lg:h-[700px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]">
                     <img src="https://quickframe.com/wp-content/uploads/2024/07/QF-Blog_Social-Media-Marketing_-Complete-Guide-for-Advertisers-2024_1920x1080.jpg" alt="Futuristic technology background" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.3]" />
                     <div className="absolute top-0 left-0 w-full h-full bg-hero-gradient opacity-80 z-0"></div>
-                    <FlickeringStars numberOfStars={100} />
+                    <FlickeringStars numberOfStars={mobileMenuOpen ? 50 : 100} />
                 </div>
-                <div className="relative z-10 container mx-auto px-4 text-white">
-                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight rounded-lg drop-shadow-lg">
+                <div className="relative z-10 container mx-auto px-4 sm:px-6 text-white">
+                    <h1 className="font-extrabold mb-4 sm:mb-6 leading-tight rounded-lg drop-shadow-lg" 
+                        style={{ fontSize: 'clamp(1.75rem, 5vw, 3.75rem)' }}>
                         <span className="text-gradient bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">Sirus:</span> النجم الذي يضيء علامتك في الكون الرقمي
                     </h1>
-                    <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto rounded-lg font-light opacity-90">
+                    <p className="mb-6 sm:mb-10 max-w-3xl mx-auto rounded-lg font-light opacity-90"
+                       style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>
                         من الفكرة إلى التألق: نصنع المحتوى الذي يحقق أهدافك ويجعلك تبرز.
                     </p>
-                    <div className="flex justify-center space-x-4 space-x-reverse">
-                        <a href="#contact" className="btn-primary inline-block">دعنا نضيء مشروعك</a>
-                        <Link to="/portfolio" className="btn-secondary inline-block">شاهد أعمالنا</Link>
+                    <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 px-4">
+                        <a href="#contact" className="btn-primary inline-block w-full sm:w-auto text-center">دعنا نضيء مشروعك</a>
+                        <Link to="/portfolio" className="btn-secondary inline-block w-full sm:w-auto text-center">شاهد أعمالنا</Link>
                     </div>
                 </div>
             </section>
 
-            {/* Trusted By Section */}
-            <section id="trusted-by" className="py-16 md:py-20 bg-card rounded-xl mx-4 my-8 card-glow border border-border">
+            {/* Trusted By Section with Mobile Grid */}
+            <section id="trusted-by" className="py-8 sm:py-12 lg:py-16 xl:py-20 bg-card rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow border border-border">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gradient">يثق بنا</h2>
-                    <p className="text-lg mb-12 max-w-2xl mx-auto font-light text-muted-foreground">
+                    <h2 className="font-bold mb-2 sm:mb-4 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>يثق بنا</h2>
+                    <p className="mb-8 sm:mb-12 max-w-2xl mx-auto font-light text-muted-foreground" 
+                       style={{ fontSize: 'clamp(0.9rem, 2vw, 1.125rem)' }}>
                         العلامات التجارية الرائدة التي اختارت Sirus لتحقيق أهدافها الرقمية
                     </p>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-5xl mx-auto items-center">
+                    <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6 lg:gap-8 max-w-5xl mx-auto items-center">
                         {trustedLogos.map((logo, index) => (
-                            <div key={index} className="flex items-center justify-center p-4 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-border/50">
+                            <div key={index} className="flex items-center justify-center p-2 sm:p-3 lg:p-4 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-border/50">
                                 <img 
                                     src={logo.url} 
                                     alt={logo.alt}
-                                    className="h-8 w-auto max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
+                                    className="h-4 sm:h-6 lg:h-8 w-auto max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
                                 />
                             </div>
                         ))}
@@ -140,91 +175,92 @@ const Index = () => {
             </section>
 
             {/* Social Media Video Section */}
-            <section id="intro-video" className="py-16 md:py-24">
+            <section id="intro-video" className="py-8 sm:py-12 lg:py-16 xl:py-24">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gradient">فيديو تعريفي بفريقنا</h2>
-                    <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light text-muted-foreground">
+                    <h2 className="font-bold mb-4 sm:mb-8 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>فيديو تعريفي بفريقنا</h2>
+                    <p className="mb-8 sm:mb-12 max-w-3xl mx-auto font-light text-muted-foreground"
+                       style={{ fontSize: 'clamp(0.9rem, 2vw, 1.25rem)' }}>
                         تعرف على الشغف والإبداع خلف Sirus. هذا الفيديو يلقي نظرة على من نحن وما الذي يدفعنا لمساعدتك على النجاح.
                     </p>
-                    <div className="max-w-4xl mx-auto">
+                    <div className="max-w-4xl mx-auto px-2 sm:px-0">
                         <YoutubeMockup thumbnailUrl="https://placehold.co/1280x720/1a365d/00d4ff?text=فريق+Sirus" />
                     </div>
                 </div>
             </section>
 
-            {/* About Us Section */}
-            <section id="about" className="py-16 md:py-24 bg-main-gradient rounded-xl mx-4 my-8 card-glow">
-                <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-                    <div className="md:w-1/2 mb-8 md:mb-0">
+            {/* About Us Section with Mobile Stack Layout */}
+            <section id="about" className="py-8 sm:py-12 lg:py-16 xl:py-24 bg-main-gradient rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow">
+                <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
+                    <div className="w-full lg:w-1/2 mb-6 lg:mb-0 order-2 lg:order-1">
                         <img src="https://placehold.co/600x400/1a365d/00d4ff?text=فريق+Sirus+المبدع" alt="Creative Team" className="rounded-xl shadow-2xl w-full h-auto object-cover border-2 border-accent" />
                     </div>
-                    <div className="md:w-1/2 md:pr-12 text-right">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-gradient">من نحن: <br /> الخبرة والإبداع معًا</h2>
-                        <p className="text-muted-foreground text-lg mb-4 font-light">
+                    <div className="w-full lg:w-1/2 lg:pr-12 text-right order-1 lg:order-2">
+                        <h2 className="font-bold mb-4 sm:mb-6 leading-tight text-gradient" style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}>من نحن: <br /> الخبرة والإبداع معًا</h2>
+                        <p className="text-muted-foreground mb-3 sm:mb-4 font-light" style={{ fontSize: 'clamp(0.9rem, 2vw, 1.125rem)' }}>
                             في Sirus، نحن وكالة إبداع محتوى بخبرة سنوات، نحول أفكارك إلى محتوى رقمي جذاب ومؤثر. فريقنا من المبدعين والمحترفين ملتزم بتحقيق أهدافك.
                         </p>
-                        <p className="text-muted-foreground text-lg font-light">
+                        <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.9rem, 2vw, 1.125rem)' }}>
                             نتولى كل تفاصيل مشروعك لضمان نتائج تتجاوز توقعاتك، ونجعلك تبرز في السوق التونسي والعالم الرقمي.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Services Section */}
-            <section id="services" className="py-16 md:py-24 bg-card rounded-xl mx-4 my-8 card-glow border border-border">
+            {/* Services Section with Mobile Grid */}
+            <section id="services" className="py-8 sm:py-12 lg:py-16 xl:py-24 bg-card rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow border border-border">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gradient">خدماتنا الشاملة: نصنع محتواك من الألف إلى الياء</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <h2 className="font-bold mb-8 sm:mb-12 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>خدماتنا الشاملة: نصنع محتواك من الألف إلى الياء</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                         {/* Service Cards */}
-                        <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-5xl mb-6">🎬</div>
-                            <h3 className="text-xl font-bold text-foreground mb-4">تصوير احترافي</h3>
-                            <p className="text-muted-foreground font-light">نقدم تصوير فيديو وصور فوتوغرافية عالية الجودة، لبروز رسالتك.</p>
+                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
+                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">🎬</div>
+                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>تصوير احترافي</h3>
+                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نقدم تصوير فيديو وصور فوتوغرافية عالية الجودة، لبروز رسالتك.</p>
                         </div>
-                        <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-5xl mb-6">✂️</div>
-                            <h3 className="text-xl font-bold text-foreground mb-4">مونتاج إبداعي</h3>
-                            <p className="text-muted-foreground font-light">نحول المواد الخام إلى قصص بصرية جذابة ومحتوى ديناميكي.</p>
+                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
+                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">✂️</div>
+                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>مونتاج إبداعي</h3>
+                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نحول المواد الخام إلى قصص بصرية جذابة ومحتوى ديناميكي.</p>
                         </div>
-                        <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-5xl mb-6">✍️</div>
-                            <h3 className="text-xl font-bold text-foreground mb-4">سرد قصصي ومحتوى</h3>
-                            <p className="text-muted-foreground font-light">نبني السرد القصصي المقنع ونصنع المحتوى الكتابي الفعال.</p>
+                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
+                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">✍️</div>
+                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>سرد قصصي ومحتوى</h3>
+                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نبني السرد القصصي المقنع ونصنع المحتوى الكتابي الفعال.</p>
                         </div>
-                        <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-5xl mb-6">💡</div>
-                            <h3 className="text-xl font-bold text-foreground mb-4">بناء العلامات التجارية</h3>
-                            <p className="text-muted-foreground font-light">نصمم محتوى يعكس هويتك ويجذب جمهورك المستهدف.</p>
+                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
+                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">💡</div>
+                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>بناء العلامات التجارية</h3>
+                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نصمم محتوى يعكس هويتك ويجذب جمهورك المستهدف.</p>
                         </div>
-                        <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-5xl mb-6">📈</div>
-                            <h3 className="text-xl font-bold text-foreground mb-4">حلول للعلامات التجارية</h3>
-                            <p className="text-muted-foreground font-light">نخدم جميع أنواع العلامات التجارية لضمان محتوى فعال ومميز.</p>
+                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
+                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">📈</div>
+                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>حلول للعلامات التجارية</h3>
+                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نخدم جميع أنواع العلامات التجارية لضمان محتوى فعال ومميز.</p>
                         </div>
-                        <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-5xl mb-6">🌟</div>
-                            <h3 className="text-xl font-bold text-foreground mb-4">إدارة العلامة الشخصية</h3>
-                            <p className="text-muted-foreground font-light">نساعد الأفراد على بناء وتطوير حضورهم الرقمي.</p>
+                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
+                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">🌟</div>
+                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>إدارة العلامة الشخصية</h3>
+                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نساعد الأفراد على بناء وتطوير حضورهم الرقمي.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Testimonials Section */}
-            <section id="testimonials" className="py-16 md:py-24">
+            {/* Testimonials Section with Mobile Carousel-like Layout */}
+            <section id="testimonials" className="py-8 sm:py-12 lg:py-16 xl:py-24">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gradient">ماذا يقول عملاؤنا؟</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                    <h2 className="font-bold mb-8 sm:mb-12 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>ماذا يقول عملاؤنا؟</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
                         {testimonials.map((testimonial, index) => (
                             <div key={index} className="flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
                                 <YoutubeMockup 
                                     thumbnailUrl={testimonial.thumbnailUrl}
-                                    className="w-full max-w-[280px]"
+                                    className="w-full max-w-[240px] sm:max-w-[280px]"
                                     aspectRatio="aspect-[9/16]"
                                 />
-                                <blockquote className="mt-6 max-w-[280px]">
-                                    <p className="text-muted-foreground text-lg font-light italic">"{testimonial.description}"</p>
-                                    <cite className="block mt-2 font-bold not-italic text-primary">- {testimonial.author}</cite>
+                                <blockquote className="mt-4 sm:mt-6 max-w-[240px] sm:max-w-[280px]">
+                                    <p className="text-muted-foreground font-light italic" style={{ fontSize: 'clamp(0.85rem, 2vw, 1.125rem)' }}>"{testimonial.description}"</p>
+                                    <cite className="block mt-2 font-bold not-italic text-primary" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1rem)' }}>- {testimonial.author}</cite>
                                 </blockquote>
                             </div>
                         ))}
@@ -232,65 +268,68 @@ const Index = () => {
                 </div>
             </section>
 
-            {/* Why Us Section */}
-            <section id="why-us" className="py-16 md:py-24 bg-main-gradient rounded-xl mx-4 my-8 card-glow">
+            {/* Why Us Section with Mobile Grid */}
+            <section id="why-us" className="py-8 sm:py-12 lg:py-16 xl:py-24 bg-main-gradient rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">لماذا تختار Sirus؟</h2>
-                    <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light text-muted-foreground">
+                    <h2 className="font-bold mb-2 sm:mb-4 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>لماذا تختار Sirus؟</h2>
+                    <p className="mb-8 sm:mb-12 max-w-3xl mx-auto font-light text-muted-foreground"
+                       style={{ fontSize: 'clamp(0.9rem, 2vw, 1.25rem)' }}>
                         نجمع بين الإبداع، الخبرة المحلية، وأحدث التقنيات لنضمن تألق علامتك التجارية.
                     </p>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-4xl mx-auto px-8">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-6 max-w-4xl mx-auto px-2 sm:px-4 lg:px-8">
                         {benefits.map((benefit, index) => (
-                            <div key={index} className="flex flex-col items-center space-y-2 p-4 transform hover:scale-110 transition-transform duration-300">
-                                <div className="text-3xl">{benefit.icon}</div>
-                                <h3 className="text-sm font-bold text-foreground text-center">{benefit.title}</h3>
+                            <div key={index} className="flex flex-col items-center space-y-1 sm:space-y-2 p-2 sm:p-3 lg:p-4 transform hover:scale-110 transition-transform duration-300">
+                                <div className="text-2xl sm:text-3xl">{benefit.icon}</div>
+                                <h3 className="font-bold text-foreground text-center" style={{ fontSize: 'clamp(0.75rem, 1.8vw, 0.875rem)' }}>{benefit.title}</h3>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Contact Section */}
-            <section id="contact" className="py-16 md:py-24 bg-card rounded-xl mx-4 my-8 card-glow border border-border">
+            {/* Contact Section with Mobile Form Layout */}
+            <section id="contact" className="py-8 sm:py-12 lg:py-16 xl:py-24 bg-card rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow border border-border">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">هل أنت مستعد للتألق؟ تواصل معنا اليوم!</h2>
-                    <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light text-muted-foreground">
+                    <h2 className="font-bold mb-4 sm:mb-6 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>هل أنت مستعد للتألق؟ تواصل معنا اليوم!</h2>
+                    <p className="mb-6 sm:mb-10 max-w-2xl mx-auto font-light text-muted-foreground"
+                       style={{ fontSize: 'clamp(0.9rem, 2vw, 1.25rem)' }}>
                         دع "Sirus" يكون شريكك في رحلة النجاح الرقمي. املأ النموذج أدناه وسنتواصل معك قريباً.
                     </p>
-                    <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-background p-8 rounded-xl shadow-2xl text-right border border-border">
-                        <div className="mb-6">
-                            <label htmlFor="name" className="block text-foreground text-sm font-bold mb-2">الاسم الكامل:</label>
-                            <input type="text" id="name" name="name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="اسمك الكامل" required />
+                    <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-background p-4 sm:p-6 lg:p-8 rounded-xl shadow-2xl text-right border border-border">
+                        <div className="mb-4 sm:mb-6">
+                            <label htmlFor="name" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>الاسم الكامل:</label>
+                            <input type="text" id="name" name="name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="اسمك الكامل" required />
                         </div>
-                        <div className="mb-6">
-                            <label htmlFor="email" className="block text-foreground text-sm font-bold mb-2">البريد الإلكتروني:</label>
-                            <input type="email" id="email" name="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="بريدك الإلكتروني" required />
+                        <div className="mb-4 sm:mb-6">
+                            <label htmlFor="email" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>البريد الإلكتروني:</label>
+                            <input type="email" id="email" name="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="بريدك الإلكتروني" required />
                         </div>
-                        <div className="mb-6">
-                            <label htmlFor="phone" className="block text-foreground text-sm font-bold mb-2">رقم الهاتف:</label>
-                            <input type="tel" id="phone" name="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="shadow-inner appearance-none border border-input rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="رقم هاتفك (اختياري)" />
+                        <div className="mb-4 sm:mb-6">
+                            <label htmlFor="phone" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>رقم الهاتف:</label>
+                            <input type="tel" id="phone" name="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="رقم هاتفك (اختياري)" />
                         </div>
-                        <div className="mb-6">
-                            <label htmlFor="message" className="block text-foreground text-sm font-bold mb-2">رسالتك:</label>
-                            <textarea id="message" name="message" rows={6} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="اكتب رسالتك هنا..." required></textarea>
+                        <div className="mb-4 sm:mb-6">
+                            <label htmlFor="message" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>رسالتك:</label>
+                            <textarea id="message" name="message" rows={5} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="اكتب رسالتك هنا..." required></textarea>
                         </div>
                         <button type="submit" className="btn-primary w-full">أرسل رسالتك</button>
                     </form>
 
-                    <div className="mt-20">
-                        <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">تواصل معنا الآن</h3>
-                        <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light text-muted-foreground">
+                    <div className="mt-12 sm:mt-16 lg:mt-20">
+                        <h3 className="font-bold mb-2 sm:mb-4 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>تواصل معنا الآن</h3>
+                        <p className="mb-8 sm:mb-12 max-w-3xl mx-auto font-light text-muted-foreground"
+                           style={{ fontSize: 'clamp(0.9rem, 2vw, 1.25rem)' }}>
                             اختر الطريقة المناسبة للتواصل معنا والحصول على استشارة مجانية
                         </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
                             {/* WhatsApp Card */}
-                            <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right flex flex-col">
-                                <h4 className="text-2xl font-bold text-foreground mb-2">واتساب</h4>
-                                <p className="text-muted-foreground mb-4">تواصل فوري ومباشر</p>
+                            <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right flex flex-col">
+                                <h4 className="font-bold text-foreground mb-2" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)' }}>واتساب</h4>
+                                <p className="text-muted-foreground mb-4" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>تواصل فوري ومباشر</p>
                                 <div className="flex-grow">
-                                  <p className="font-mono text-lg text-primary">+216 58 415 520</p>
-                                  <p className="text-muted-foreground my-1">أو</p>
-                                  <p className="font-mono text-lg text-primary mb-6">+216 58 415 501</p>
+                                  <p className="font-mono text-primary" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1.125rem)' }}>+216 58 415 520</p>
+                                  <p className="text-muted-foreground my-1" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>أو</p>
+                                  <p className="font-mono text-primary mb-4 sm:mb-6" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1.125rem)' }}>+216 58 415 501</p>
                                 </div>
                                 <a href="https://wa.me/21658415520" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full">
                                     ابدأ المحادثة
@@ -298,11 +337,11 @@ const Index = () => {
                             </div>
 
                             {/* Instagram Card */}
-                            <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right flex flex-col">
-                                <h4 className="text-2xl font-bold text-foreground mb-2">انستغرام</h4>
-                                <p className="text-muted-foreground mb-4">شاهد أعمالنا ومشاريعنا</p>
+                            <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right flex flex-col">
+                                <h4 className="font-bold text-foreground mb-2" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)' }}>انستغرام</h4>
+                                <p className="text-muted-foreground mb-4" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>شاهد أعمالنا ومشاريعنا</p>
                                 <div className="flex-grow">
-                                    <p className="font-mono text-lg text-primary mb-6">@Sirus_Tn</p>
+                                    <p className="font-mono text-primary mb-4 sm:mb-6" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1.125rem)' }}>@Sirus_Tn</p>
                                 </div>
                                 <a href="https://instagram.com/Sirus_Tn" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full">
                                     زر صفحتنا
@@ -314,13 +353,13 @@ const Index = () => {
             </section>
 
             {/* Footer Section */}
-            <footer className="bg-card text-muted-foreground py-8 mt-12 rounded-t-3xl border-t border-border">
+            <footer className="bg-card text-muted-foreground py-6 sm:py-8 mt-8 sm:mt-12 rounded-t-3xl border-t border-border">
                 <div className="container mx-auto px-4 text-center">
-                    <p>&copy; 2025 Sirus. جميع الحقوق محفوظة.</p>
-                    <div className="flex justify-center space-x-6 space-x-reverse mt-4">
-                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">فيسبوك</a>
-                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">إنستغرام</a>
-                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">لينكدإن</a>
+                    <p style={{ fontSize: 'clamp(0.8rem, 1.8vw, 1rem)' }}>&copy; 2025 Sirus. جميع الحقوق محفوظة.</p>
+                    <div className="flex justify-center space-x-4 sm:space-x-6 space-x-reverse mt-3 sm:mt-4">
+                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>فيسبوك</a>
+                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>إنستغرام</a>
+                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>لينكدإن</a>
                     </div>
                 </div>
             </footer>
