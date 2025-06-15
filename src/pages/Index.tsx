@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import YoutubeMockup from "@/components/YoutubeMockup";
 
 const Index = () => {
     const [formData, setFormData] = useState({
@@ -28,17 +29,17 @@ const Index = () => {
 
     const testimonials = [
         {
-            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-man-working-on-a-laptop-in-a-modern-office-4233-large.mp4',
+            thumbnailUrl: 'https://placehold.co/360x640/8b5cf6/ffffff?text=شهادة+عميل+1',
             description: 'كانت تجربتنا مع Sirus رائعة! لقد ساعدونا في الوصول إلى جمهور جديد وتحقيق نتائج مذهلة.',
             author: 'سارة، مديرة تسويق'
         },
         {
-            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-woman-in-a-cafe-working-on-a-laptop-4235-large.mp4',
+            thumbnailUrl: 'https://placehold.co/360x640/8b5cf6/ffffff?text=شهادة+عميل+2',
             description: 'فريق مبدع ومحترف. لقد فهموا رؤيتنا تمامًا وترجموها إلى محتوى بصري جذاب.',
             author: 'أحمد، مؤسس شركة ناشئة'
         },
         {
-            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-man-sitting-at-a-desk-and-working-on-a-laptop-4238-large.mp4',
+            thumbnailUrl: 'https://placehold.co/360x640/8b5cf6/ffffff?text=شهادة+عميل+3',
             description: 'الجودة والالتزام بالمواعيد هما ما يميز Sirus. أنصح بهم بشدة!',
             author: 'فاطمة، صاحبة علامة تجارية'
         }
@@ -65,10 +66,7 @@ const Index = () => {
             {/* Hero Section */}
             <section className="relative h-[600px] md:h-[700px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]">
-                    <video autoPlay muted loop playsInline className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.4] grayscale-[0.2]">
-                        <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-technology-background-with-hud-elements-42878-large.mp4" type="video/mp4" />
-                        متصفحك لا يدعم تشغيل الفيديو.
-                    </video>
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop" alt="Futuristic technology background" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.4] grayscale-[0.2]" />
                     <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
                 </div>
                 <div className="relative z-10 container mx-auto px-4 text-white">
@@ -92,13 +90,8 @@ const Index = () => {
                     <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light opacity-90">
                         تعرف على الشغف والإبداع خلف Sirus. هذا الفيديو يلقي نظرة على من نحن وما الذي يدفعنا لمساعدتك على النجاح.
                     </p>
-                    <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl card-glow border border-purple-500/30">
-                        <div className="aspect-video bg-black rounded-xl">
-                            <video controls playsInline loop className="w-full h-full object-cover rounded-xl">
-                                <source src="https://assets.mixkit.co/videos/preview/mixkit-a-man-and-a-woman-working-on-a-project-42880-large.mp4" type="video/mp4" />
-                                متصفحك لا يدعم تشغيل الفيديو.
-                            </video>
-                        </div>
+                    <div className="max-w-4xl mx-auto">
+                        <YoutubeMockup thumbnailUrl="https://placehold.co/1280x720/8b5cf6/ffffff?text=فريق+Sirus" />
                     </div>
                 </div>
             </section>
@@ -168,12 +161,11 @@ const Index = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                         {testimonials.map((testimonial, index) => (
                             <div key={index} className="flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
-                                <div className="w-full max-w-[280px] rounded-2xl overflow-hidden shadow-2xl card-glow border border-purple-500/30 aspect-[9/16]">
-                                    <video controls playsInline loop className="w-full h-full object-cover">
-                                        <source src={testimonial.videoSrc} type="video/mp4" />
-                                        متصفحك لا يدعم تشغيل الفيديو.
-                                    </video>
-                                </div>
+                                <YoutubeMockup 
+                                    thumbnailUrl={testimonial.thumbnailUrl}
+                                    className="w-full max-w-[280px]"
+                                    aspectRatio="aspect-[9/16]"
+                                />
                                 <blockquote className="mt-6 max-w-[280px]">
                                     <p className="text-gray-300 text-lg font-light italic">"{testimonial.description}"</p>
                                     <cite className="block mt-2 font-bold not-italic text-purple-300">- {testimonial.author}</cite>

@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Play, Camera, Video, PenTool, Star, Users, Globe } from "lucide-react";
@@ -156,11 +155,19 @@ const Portfolio = () => {
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full">
-                        <Play className="h-8 w-8 text-white" />
-                      </div>
-                    </div>
+                    {project.category === 'video' ? (
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors">
+                            <div className="bg-red-600/90 h-12 w-20 rounded-lg flex items-center justify-center cursor-pointer group-hover:bg-red-500 transition-colors">
+                                <Play className="h-8 w-8 text-white" fill="white" />
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full">
+                                <Play className="h-8 w-8 text-white" />
+                            </div>
+                        </div>
+                    )}
                     <div className="absolute top-4 right-4 bg-gradient-to-r from-cyan-500 to-purple-600 px-3 py-1 rounded-full text-sm font-medium">
                       {project.type}
                     </div>
