@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -149,21 +150,50 @@ const Index = () => {
                 </div>
             </section>
 
-            {/* Trusted By Section with Mobile Grid */}
-            <section id="trusted-by" className="py-8 sm:py-12 lg:py-16 xl:py-20 bg-card rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow border border-border">
+            {/* Trusted By Section with Animated Carousel */}
+            <section id="trusted-by" className="py-8 sm:py-12 lg:py-16 xl:py-20 bg-card rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow border border-border overflow-hidden">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="font-bold mb-8 sm:mb-12 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>يثق بنا</h2>
-                    <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6 lg:gap-8 max-w-5xl mx-auto items-center">
-                        {trustedLogos.map((logo, index) => (
-                            <div key={index} className="flex items-center justify-center p-2 sm:p-3 lg:p-4 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-border/50">
-                                <img 
-                                    src={logo.url} 
-                                    alt={logo.alt}
-                                    className="h-4 sm:h-6 lg:h-8 w-auto max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-                                />
+                    
+                    {/* Animated Carousel */}
+                    <div className="relative max-w-6xl mx-auto">
+                        <div className="flex overflow-hidden">
+                            <div className="flex animate-[scroll_20s_linear_infinite] hover:pause">
+                                {/* First set of logos */}
+                                {trustedLogos.map((logo, index) => (
+                                    <div key={`first-${index}`} className="flex-shrink-0 mx-4 sm:mx-6 lg:mx-8">
+                                        <div className="flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-background rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50 transform hover:scale-110 hover:-translate-y-2 group">
+                                            <img 
+                                                src={logo.url} 
+                                                alt={logo.alt}
+                                                className="h-8 sm:h-10 lg:h-12 w-auto max-w-[120px] object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 filter grayscale group-hover:grayscale-0"
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                                {/* Duplicate set for seamless loop */}
+                                {trustedLogos.map((logo, index) => (
+                                    <div key={`second-${index}`} className="flex-shrink-0 mx-4 sm:mx-6 lg:mx-8">
+                                        <div className="flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-background rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50 transform hover:scale-110 hover:-translate-y-2 group">
+                                            <img 
+                                                src={logo.url} 
+                                                alt={logo.alt}
+                                                className="h-8 sm:h-10 lg:h-12 w-auto max-w-[120px] object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 filter grayscale group-hover:grayscale-0"
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+                        
+                        {/* Gradient overlays for fade effect */}
+                        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-card to-transparent pointer-events-none"></div>
+                        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-card to-transparent pointer-events-none"></div>
                     </div>
+                    
+                    {/* Floating elements for extra visual appeal */}
+                    <div className="absolute -top-4 left-1/4 w-2 h-2 bg-accent rounded-full animate-pulse opacity-50"></div>
+                    <div className="absolute -bottom-4 right-1/3 w-3 h-3 bg-primary rounded-full animate-pulse opacity-30 animation-delay-1000"></div>
                 </div>
             </section>
 

@@ -210,4 +210,24 @@
   .text-responsive-4xl {
     font-size: clamp(1.75rem, 5vw, 3.75rem);
   }
+
+  /* Pause animation on hover */
+  .pause {
+    animation-play-state: paused !important;
+  }
+}
+
+/* Custom keyframes for scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Animation delay utility */
+.animation-delay-1000 {
+  animation-delay: 1000ms;
 }
