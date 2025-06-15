@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ... keep existing code (:root and .dark definitions) */
+/* ... keep existing code (:root definition) */
 
 @layer base {
   :root {
@@ -55,41 +55,41 @@
   }
 
   .dark {
-    --background: 0 0% 4%; /* #0a0a0a */
-    --foreground: 0 0% 87.8%; /* #e0e0e0 */
+    --background: 220 40% 5%; /* #080c14 */
+    --foreground: 210 20% 95%; /* #ecf0f2 */
 
-    --card: 0 0% 7%; /* #121212 */
-    --card-foreground: 0 0% 87.8%;
+    --card: 220 30% 10%; /* #111622 */
+    --card-foreground: 210 20% 95%;
 
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 87.8%;
+    --popover: 220 40% 5%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 36 100% 50%; /* #ff9900 */
-    --primary-foreground: 0 0% 4%;
+    --primary: 200 100% 50%; /* #00aaff */
+    --primary-foreground: 220 40% 5%;
 
-    --secondary: 265 53% 33%; /* #4c2882 */
-    --secondary-foreground: 0 0% 87.8%;
+    --secondary: 220 20% 15%; /* #1d2333 */
+    --secondary-foreground: 210 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 210 20% 80%;
 
-    --accent: 36 100% 50%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 200 100% 50%;
+    --accent-foreground: 220 40% 5%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 36 100% 50%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 36 100% 50%;
-    --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 36 100% 50%;
+    --border: 220 20% 20%; /* #293040 */
+    --input: 220 20% 20%;
+    --ring: 200 100% 50%;
+    --sidebar-background: 220 30% 10%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 200 100% 50%;
+    --sidebar-primary-foreground: 220 40% 5%;
+    --sidebar-accent: 220 20% 20%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 200 100% 50%;
   }
 
   html {
@@ -107,51 +107,52 @@
 
 @layer components {
   .text-gradient {
-    background: linear-gradient(to right, #ff9900, #ffcc80);
+    background: linear-gradient(to right, hsl(var(--primary)), #00d4ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
   }
   .btn-primary {
-    @apply text-black font-bold py-3 px-8 rounded-full text-lg;
-    background: #ff9900;
+    @apply font-bold py-3 px-8 rounded-full text-lg;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(255, 153, 0, 0.4);
+    box-shadow: 0 5px 20px hsla(var(--primary), 0.3);
   }
   .btn-primary:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(255, 153, 0, 0.6);
-    background: #ffad33;
+    box-shadow: 0 8px 25px hsla(var(--primary), 0.5);
+    background: hsl(var(--primary) / 0.9);
   }
   .btn-secondary {
     @apply font-bold py-3 px-8 rounded-full text-lg;
-    border: 2px solid #ff9900;
-    color: #ff9900;
+    border: 2px solid hsl(var(--primary));
+    color: hsl(var(--primary));
     background-color: transparent;
     transition: all 0.3s ease;
   }
   .btn-secondary:hover {
-    background-color: #ff9900;
-    color: #0a0a0a;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 5px 20px rgba(255, 153, 0, 0.3);
+    box-shadow: 0 5px 20px hsla(var(--primary), 0.2);
   }
 
   .card-glow {
     background-color: hsl(var(--card));
-    box-shadow: 0 0 30px rgba(76, 40, 130, 0.3), 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 30px hsla(var(--secondary), 0.3), 0 8px 25px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(76, 40, 130, 0.4);
+    border: 1px solid hsla(var(--secondary), 0.4);
   }
   .card-glow:hover {
     transform: translateY(-7px) scale(1.02);
-    box-shadow: 0 0 45px rgba(255, 153, 0, 0.3), 0 12px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 45px hsla(var(--primary), 0.3), 0 12px 35px rgba(0, 0, 0, 0.3);
   }
 }
 
 @layer utilities {
     .bg-main-gradient {
-        background: linear-gradient(145deg, #0a0a0a 0%, #121212 100%);
+        background: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--card)) 100%);
     }
 }

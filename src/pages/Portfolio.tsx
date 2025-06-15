@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Play, Camera, Video, PenTool, Star, Users, Globe } from "lucide-react";
@@ -147,7 +146,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <Card key={project.id} className="bg-slate-900/40 backdrop-blur-sm border border-secondary/30 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-[0_0_25px_theme(colors.primary/0.5)] hover:scale-[1.03] group">
+              <Card key={project.id} className="bg-card/60 backdrop-blur-sm border border-secondary/30 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-[0_0_25px_theme(colors.primary/0.5)] hover:scale-[1.03] group">
                 <CardContent className="p-0">
                   <div className="aspect-video relative overflow-hidden">
                     <img
