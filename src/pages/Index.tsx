@@ -309,30 +309,9 @@ const Index = () => {
                         استشارة مجانية لمشروعك الرقمي
                     </p>
 
-                    <div className="max-w-4xl mx-auto">
-                        {/* Contact Form */}
-                        <form onSubmit={handleSubmit} className="bg-background p-4 sm:p-6 lg:p-8 rounded-xl shadow-2xl text-right border border-border mb-8 sm:mb-12">
-                            <div className="mb-4 sm:mb-6">
-                                <label htmlFor="name" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>الاسم:</label>
-                                <input type="text" id="name" name="name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="اسمك" required />
-                            </div>
-                            <div className="mb-4 sm:mb-6">
-                                <label htmlFor="email" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>البريد الإلكتروني:</label>
-                                <input type="email" id="email" name="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="بريدك الإلكتروني" required />
-                            </div>
-                            <div className="mb-4 sm:mb-6">
-                                <label htmlFor="phone" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>رقم الهاتف:</label>
-                                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="رقم هاتفك" />
-                            </div>
-                            <div className="mb-4 sm:mb-6">
-                                <label htmlFor="message" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>رسالتك:</label>
-                                <textarea id="message" name="message" rows={5} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="رسالتك..." required></textarea>
-                            </div>
-                            <button type="submit" className="btn-primary w-full">أرسل</button>
-                        </form>
-
-                        {/* Contact Cards Between Form and Other Methods */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+                    <div className="max-w-6xl mx-auto">
+                        {/* Mobile: Contact Cards Before Form */}
+                        <div className="block lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
                             {/* WhatsApp Card */}
                             <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right flex flex-col">
                                 <h4 className="font-bold text-foreground mb-2" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)' }}>واتساب</h4>
@@ -360,8 +339,65 @@ const Index = () => {
                             </div>
                         </div>
 
-                        {/* Additional Contact Methods Section (if needed) */}
-                        <div className="text-center">
+                        {/* Desktop: Form and Contact Cards Side by Side */}
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+                            {/* Contact Form */}
+                            <div className="lg:col-span-2">
+                                <form onSubmit={handleSubmit} className="bg-background p-4 sm:p-6 lg:p-8 rounded-xl shadow-2xl text-right border border-border">
+                                    <div className="mb-4 sm:mb-6">
+                                        <label htmlFor="name" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>الاسم:</label>
+                                        <input type="text" id="name" name="name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="اسمك" required />
+                                    </div>
+                                    <div className="mb-4 sm:mb-6">
+                                        <label htmlFor="email" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>البريد الإلكتروني:</label>
+                                        <input type="email" id="email" name="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="بريدك الإلكتروني" required />
+                                    </div>
+                                    <div className="mb-4 sm:mb-6">
+                                        <label htmlFor="phone" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>رقم الهاتف:</label>
+                                        <input type="tel" id="phone" name="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="رقم هاتفك" />
+                                    </div>
+                                    <div className="mb-4 sm:mb-6">
+                                        <label htmlFor="message" className="block text-foreground font-bold mb-2" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>رسالتك:</label>
+                                        <textarea id="message" name="message" rows={5} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-2.5 sm:py-3 px-3 sm:px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring text-sm sm:text-base" placeholder="رسالتك..." required></textarea>
+                                    </div>
+                                    <button type="submit" className="btn-primary w-full">أرسل</button>
+                                </form>
+                            </div>
+
+                            {/* Desktop: Contact Cards Beside Form */}
+                            <div className="hidden lg:block lg:col-span-1">
+                                <div className="space-y-6">
+                                    {/* WhatsApp Card */}
+                                    <div className="bg-main-gradient p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right flex flex-col">
+                                        <h4 className="font-bold text-foreground mb-2" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)' }}>واتساب</h4>
+                                        <p className="text-muted-foreground mb-4" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>تواصل فوري</p>
+                                        <div className="flex-grow">
+                                          <p className="font-mono text-primary" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1.125rem)' }}>+216 58 415 520</p>
+                                          <p className="text-muted-foreground my-1" style={{ fontSize: 'clamp(0.8rem, 1.8vw, 0.875rem)' }}>أو</p>
+                                          <p className="font-mono text-primary mb-6" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1.125rem)' }}>+216 58 415 501</p>
+                                        </div>
+                                        <a href="https://wa.me/21658415520" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full">
+                                            ابدأ المحادثة
+                                        </a>
+                                    </div>
+
+                                    {/* Instagram Card */}
+                                    <div className="bg-main-gradient p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right flex flex-col">
+                                        <h4 className="font-bold text-foreground mb-2" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)' }}>انستغرام</h4>
+                                        <p className="text-muted-foreground mb-4" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>شاهد أعمالنا</p>
+                                        <div className="flex-grow">
+                                            <p className="font-mono text-primary mb-6" style={{ fontSize: 'clamp(0.9rem, 2.2vw, 1.125rem)' }}>@Sirus_Tn</p>
+                                        </div>
+                                        <a href="https://instagram.com/Sirus_Tn" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full">
+                                            زر صفحتنا
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Additional Contact Methods Section */}
+                        <div className="text-center mt-8 sm:mt-12">
                             <p className="text-muted-foreground" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>
                                 أو تواصل معنا عبر الطرق الأخرى المتاحة
                             </p>
