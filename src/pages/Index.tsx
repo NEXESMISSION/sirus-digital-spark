@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -55,6 +54,24 @@ const Index = () => {
                     <div className="flex justify-center space-x-4 space-x-reverse">
                         <a href="#contact" className="btn-primary inline-block">دعنا نضيء مشروعك</a>
                         <Link to="/portfolio" className="btn-secondary inline-block">شاهد أعمالنا</Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Social Media Video Section */}
+            <section id="social-video" className="py-16 md:py-24">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gradient">شاهد إبداعنا على السوشيال ميديا</h2>
+                    <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light opacity-90">
+                        نصنع محتوى عصري وجذاب يحقق انتشاراً واسعاً. شاهد كيف نترجم الأفكار إلى فيديوهات تحقق ملايين المشاهدات.
+                    </p>
+                    <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl card-glow border border-purple-500/30">
+                        <div className="aspect-video bg-black rounded-xl">
+                            <video controls playsInline loop className="w-full h-full object-cover rounded-xl">
+                                <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-making-a-video-for-her-social-media-47841-large.mp4" type="video/mp4" />
+                                متصفحك لا يدعم تشغيل الفيديو.
+                            </video>
+                        </div>
                     </div>
                 </div>
             </section>
