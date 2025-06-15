@@ -17,6 +17,15 @@ const Index = () => {
         setFormData({ name: '', email: '', message: '' });
     };
 
+    const benefits = [
+        { icon: '🚀', title: 'تقنيات حديثة' },
+        { icon: '⏱️', title: 'فعالية وسرعة' },
+        { icon: '✨', title: 'فريق مبدع' },
+        { icon: '🇹🇳', title: 'خبرة محلية' },
+        { icon: '💖', title: 'عناية شخصية' },
+        { icon: '🌐', title: 'رؤية عالمية' },
+    ];
+
     return (
         <div className="text-right">
             {/* Header Section */}
@@ -137,39 +146,17 @@ const Index = () => {
             {/* Why Us Section */}
             <section id="why-us" className="py-16 md:py-24 bg-main-gradient rounded-xl mx-4 my-8 card-glow text-white">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gradient">لماذا تختار Sirus؟ تألق بذكاء، تألق بسرعة</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Benefit Cards */}
-                        <div className="bg-[#1a083d] p-8 rounded-xl shadow-lg card-glow text-center">
-                            <div className="text-purple-400 text-5xl mb-6">🚀</div>
-                            <h3 className="text-xl font-bold text-white mb-4">تقنيات حديثة</h3>
-                            <p className="text-gray-300 font-light">نستخدم أحدث التقنيات والأدوات لضمان جودة وسرعة.</p>
-                        </div>
-                        <div className="bg-[#1a083d] p-8 rounded-xl shadow-lg card-glow text-center">
-                            <div className="text-purple-400 text-5xl mb-6">⏱️</div>
-                            <h3 className="text-xl font-bold text-white mb-4">فعالية وتوفير</h3>
-                            <p className="text-gray-300 font-light">محتوى عالي الجودة بتكلفة أقل ووقت أسرع.</p>
-                        </div>
-                        <div className="bg-[#1a083d] p-8 rounded-xl shadow-lg card-glow text-center">
-                            <div className="text-purple-400 text-5xl mb-6">✨</div>
-                            <h3 className="text-xl font-bold text-white mb-4">فريق مبدع</h3>
-                            <p className="text-gray-300 font-light">فريق من المبدعين والمحترفين الشغوفين.</p>
-                        </div>
-                        <div className="bg-[#1a083d] p-8 rounded-xl shadow-lg card-glow text-center">
-                            <div className="text-purple-400 text-5xl mb-6">🇹🇳</div>
-                            <h3 className="text-xl font-bold text-white mb-4">خبرة تونسية</h3>
-                            <p className="text-gray-300 font-light">نفهم السوق التونسي جيدًا ونخاطب الجمهور المحلي.</p>
-                        </div>
-                        <div className="bg-[#1a083d] p-8 rounded-xl shadow-lg card-glow text-center">
-                            <div className="text-purple-400 text-5xl mb-6">💖</div>
-                            <h3 className="text-xl font-bold text-white mb-4">عناية شخصية</h3>
-                            <p className="text-gray-300 font-light">نتعامل مع كل عميل باهتمام شخصي فريد.</p>
-                        </div>
-                        <div className="bg-[#1a083d] p-8 rounded-xl shadow-lg card-glow text-center">
-                            <div className="text-purple-400 text-5xl mb-6">🌐</div>
-                            <h3 className="text-xl font-bold text-white mb-4">تألق عالمي</h3>
-                            <p className="text-gray-300 font-light">محتوى يساعدك على التألق محليًا وعالميًا.</p>
-                        </div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">لماذا تختار Sirus؟</h2>
+                    <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light opacity-90">
+                        نجمع بين الإبداع، الخبرة المحلية، وأحدث التقنيات لنضمن تألق علامتك التجارية.
+                    </p>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
+                        {benefits.map((benefit, index) => (
+                            <div key={index} className="flex flex-col items-center space-y-3 transform hover:scale-110 transition-transform duration-300">
+                                <div className="text-5xl">{benefit.icon}</div>
+                                <h3 className="text-lg font-bold text-white text-center">{benefit.title}</h3>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
