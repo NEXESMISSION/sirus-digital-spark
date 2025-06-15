@@ -21,6 +21,7 @@ export default {
 			fontFamily: {
 				cairo: ['Cairo', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
+        tajawal: ['Tajawal', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

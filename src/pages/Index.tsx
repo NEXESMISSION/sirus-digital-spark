@@ -46,10 +46,10 @@ const Index = () => {
                     <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
                 </div>
                 <div className="relative z-10 container mx-auto px-4 text-white">
-                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight rounded-lg drop-shadow-lg">
+                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight rounded-lg drop-shadow-lg font-tajawal">
                         <span className="text-gradient">Sirus:</span> النجم الذي يضيء علامتك في الكون الرقمي
                     </h1>
-                    <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto rounded-lg font-light opacity-90">
+                    <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto rounded-lg font-light opacity-90 font-tajawal">
                         من الفكرة إلى التألق: نصنع المحتوى الذي يحقق أهدافك ويجعلك تبرز.
                     </p>
                     <div className="flex justify-center space-x-4 space-x-reverse">

@@ -88,7 +88,7 @@ const Portfolio = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white font-sans" dir="rtl">
+    <div className="min-h-screen bg-main-gradient text-white font-sans" dir="rtl">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-lg z-50 border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
@@ -111,10 +111,10 @@ const Portfolio = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-cyan-900/50"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-6xl font-black mb-6 bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
+            <h1 className="text-6xl font-black mb-6 bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent font-tajawal">
               معرض أعمالنا
             </h1>
-            <p className="text-2xl text-gray-300 mb-8">
+            <p className="text-2xl text-gray-300 mb-8 font-tajawal">
               مشاريع حقيقية، نتائج استثنائية، وقصص نجاح ملهمة
             </p>
           </div>
@@ -148,7 +148,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <Card key={project.id} className="bg-white/5 backdrop-blur-lg border border-white/10 hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl group overflow-hidden">
+              <Card key={project.id} className="bg-slate-900/40 backdrop-blur-sm border border-purple-500/30 rounded-2xl overflow-hidden transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(72,187,255,0.5)] hover:scale-[1.03] group">
                 <CardContent className="p-0">
                   <div className="aspect-video relative overflow-hidden">
                     <iframe
@@ -171,7 +171,7 @@ const Portfolio = () => {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                    <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-gradient">
                       {project.title}
                     </h3>
                     <p className="text-gray-300 text-sm leading-relaxed">
