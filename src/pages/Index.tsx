@@ -26,6 +26,24 @@ const Index = () => {
         { icon: '🌐', title: 'رؤية عالمية' },
     ];
 
+    const testimonials = [
+        {
+            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-modern-woman-talking-on-the-phone-with-a-client-41527-large.mp4',
+            description: 'كانت تجربتنا مع Sirus رائعة! لقد ساعدونا في الوصول إلى جمهور جديد وتحقيق نتائج مذهلة.',
+            author: 'سارة، مديرة تسويق'
+        },
+        {
+            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-woman-in-a-blazer-working-on-a-laptop-42588-large.mp4',
+            description: 'فريق مبدع ومحترف. لقد فهموا رؤيتنا تمامًا وترجموها إلى محتوى بصري جذاب.',
+            author: 'أحمد، مؤسس شركة ناشئة'
+        },
+        {
+            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-man-in-a-checked-shirt-uses-his-phone-in-a-room-42571-large.mp4',
+            description: 'الجودة والالتزام بالمواعيد هما ما يميز Sirus. أنصح بهم بشدة!',
+            author: 'فاطمة، صاحبة علامة تجارية'
+        }
+    ];
+
     return (
         <div className="text-right">
             {/* Header Section */}
@@ -139,6 +157,29 @@ const Index = () => {
                             <h3 className="text-xl font-bold text-white mb-4">إدارة العلامة الشخصية</h3>
                             <p className="text-gray-300 font-light">نساعد الأفراد على بناء وتطوير حضورهم الرقمي.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials Section */}
+            <section id="testimonials" className="py-16 md:py-24 text-white">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gradient">ماذا يقول عملاؤنا؟</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                        {testimonials.map((testimonial, index) => (
+                            <div key={index} className="flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                                <div className="w-full max-w-[280px] rounded-2xl overflow-hidden shadow-2xl card-glow border border-purple-500/30 aspect-[9/16]">
+                                    <video controls playsInline loop className="w-full h-full object-cover">
+                                        <source src={testimonial.videoSrc} type="video/mp4" />
+                                        متصفحك لا يدعم تشغيل الفيديو.
+                                    </video>
+                                </div>
+                                <blockquote className="mt-6 max-w-[280px]">
+                                    <p className="text-gray-300 text-lg font-light italic">"{testimonial.description}"</p>
+                                    <cite className="block mt-2 font-bold not-italic text-purple-300">- {testimonial.author}</cite>
+                                </blockquote>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
