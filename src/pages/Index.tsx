@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -47,6 +46,39 @@ const Index = () => {
         }
     ];
 
+    const trustedLogos = [
+        {
+            name: 'Apple',
+            url: 'https://logo.clearbit.com/apple.com',
+            alt: 'Apple Logo'
+        },
+        {
+            name: 'Microsoft',
+            url: 'https://logo.clearbit.com/microsoft.com',
+            alt: 'Microsoft Logo'
+        },
+        {
+            name: 'Google',
+            url: 'https://logo.clearbit.com/google.com',
+            alt: 'Google Logo'
+        },
+        {
+            name: 'Netflix',
+            url: 'https://logo.clearbit.com/netflix.com',
+            alt: 'Netflix Logo'
+        },
+        {
+            name: 'Amazon',
+            url: 'https://logo.clearbit.com/amazon.com',
+            alt: 'Amazon Logo'
+        },
+        {
+            name: 'Meta',
+            url: 'https://logo.clearbit.com/meta.com',
+            alt: 'Meta Logo'
+        }
+    ];
+
     return (
         <div className="text-right bg-background text-foreground">
             {/* Header Section */}
@@ -82,6 +114,27 @@ const Index = () => {
                     <div className="flex justify-center space-x-4 space-x-reverse">
                         <a href="#contact" className="btn-primary inline-block">دعنا نضيء مشروعك</a>
                         <Link to="/portfolio" className="btn-secondary inline-block">شاهد أعمالنا</Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* Trusted By Section */}
+            <section id="trusted-by" className="py-16 md:py-20 bg-card rounded-xl mx-4 my-8 card-glow border border-border">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gradient">يثق بنا</h2>
+                    <p className="text-lg mb-12 max-w-2xl mx-auto font-light text-muted-foreground">
+                        العلامات التجارية الرائدة التي اختارت Sirus لتحقيق أهدافها الرقمية
+                    </p>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-5xl mx-auto items-center">
+                        {trustedLogos.map((logo, index) => (
+                            <div key={index} className="flex items-center justify-center p-4 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-border/50">
+                                <img 
+                                    src={logo.url} 
+                                    alt={logo.alt}
+                                    className="h-8 w-auto max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
