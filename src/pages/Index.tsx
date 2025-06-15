@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -157,7 +158,7 @@ const Index = () => {
                     {/* Animated Carousel */}
                     <div className="relative max-w-6xl mx-auto">
                         <div className="flex overflow-hidden">
-                            <div className="flex animate-[scroll_20s_linear_infinite] hover:pause">
+                            <div className="flex animate-[scroll_15s_linear_infinite] hover:pause">
                                 {/* First set of logos */}
                                 {trustedLogos.map((logo, index) => (
                                     <div key={`first-${index}`} className="flex-shrink-0 mx-4 sm:mx-6 lg:mx-8">
@@ -170,9 +171,21 @@ const Index = () => {
                                         </div>
                                     </div>
                                 ))}
-                                {/* Duplicate set for seamless loop */}
+                                {/* Second set for seamless loop */}
                                 {trustedLogos.map((logo, index) => (
                                     <div key={`second-${index}`} className="flex-shrink-0 mx-4 sm:mx-6 lg:mx-8">
+                                        <div className="flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-background rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50 transform hover:scale-110 hover:-translate-y-2 group">
+                                            <img 
+                                                src={logo.url} 
+                                                alt={logo.alt}
+                                                className="h-8 sm:h-10 lg:h-12 w-auto max-w-[120px] object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 filter grayscale group-hover:grayscale-0"
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                                {/* Third set for extra smoothness */}
+                                {trustedLogos.map((logo, index) => (
+                                    <div key={`third-${index}`} className="flex-shrink-0 mx-4 sm:mx-6 lg:mx-8">
                                         <div className="flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-background rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50 transform hover:scale-110 hover:-translate-y-2 group">
                                             <img 
                                                 src={logo.url} 
