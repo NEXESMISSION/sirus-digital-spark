@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -92,7 +91,6 @@ const Index = () => {
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:block">
                         <ul className="flex space-x-4 xl:space-x-6 space-x-reverse">
-                            <li><a href="#about" className="text-sm xl:text-base text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">من نحن</a></li>
                             <li><a href="#services" className="text-sm xl:text-base text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">خدماتنا</a></li>
                             <li><Link to="/portfolio" className="text-sm xl:text-base text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">معرض أعمالنا</Link></li>
                             <li><a href="#why-us" className="text-sm xl:text-base text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">لماذا Sirus؟</a></li>
@@ -118,7 +116,6 @@ const Index = () => {
                     <div className="lg:hidden bg-card border-t border-border">
                         <nav className="container mx-auto px-4 py-4">
                             <ul className="space-y-3">
-                                <li><a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-muted-foreground hover:text-primary font-medium py-2 transition-colors">من نحن</a></li>
                                 <li><a href="#services" onClick={() => setMobileMenuOpen(false)} className="block text-muted-foreground hover:text-primary font-medium py-2 transition-colors">خدماتنا</a></li>
                                 <li><Link to="/portfolio" onClick={() => setMobileMenuOpen(false)} className="block text-muted-foreground hover:text-primary font-medium py-2 transition-colors">معرض أعمالنا</Link></li>
                                 <li><a href="#why-us" onClick={() => setMobileMenuOpen(false)} className="block text-muted-foreground hover:text-primary font-medium py-2 transition-colors">لماذا Sirus؟</a></li>
@@ -180,24 +177,6 @@ const Index = () => {
                     </p>
                     <div className="max-w-4xl mx-auto px-2 sm:px-0">
                         <YoutubeMockup thumbnailUrl="https://placehold.co/1280x720/1a365d/00d4ff?text=فريق+Sirus" />
-                    </div>
-                </div>
-            </section>
-
-            {/* About Us Section with Mobile Stack Layout */}
-            <section id="about" className="py-8 sm:py-12 lg:py-16 xl:py-24 bg-main-gradient rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow">
-                <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
-                    <div className="w-full lg:w-1/2 mb-6 lg:mb-0 order-2 lg:order-1">
-                        <img src="https://placehold.co/600x400/1a365d/00d4ff?text=فريق+Sirus+المبدع" alt="Creative Team" className="rounded-xl shadow-2xl w-full h-auto object-cover border-2 border-accent" />
-                    </div>
-                    <div className="w-full lg:w-1/2 lg:pr-12 text-right order-1 lg:order-2">
-                        <h2 className="font-bold mb-4 sm:mb-6 leading-tight text-gradient" style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}>من نحن</h2>
-                        <p className="text-muted-foreground mb-3 sm:mb-4 font-light" style={{ fontSize: 'clamp(0.9rem, 2vw, 1.125rem)' }}>
-                            وكالة إبداع محتوى بخبرة سنوات، نحول أفكارك إلى محتوى رقمي جذاب ومؤثر.
-                        </p>
-                        <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.9rem, 2vw, 1.125rem)' }}>
-                            نتولى تفاصيل مشروعك لضمان نتائج تتجاوز توقعاتك.
-                        </p>
                     </div>
                 </div>
             </section>
