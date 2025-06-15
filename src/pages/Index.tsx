@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -29,17 +28,17 @@ const Index = () => {
 
     const testimonials = [
         {
-            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-modern-woman-talking-on-the-phone-with-a-client-41527-large.mp4',
+            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-man-working-on-a-laptop-in-a-modern-office-4233-large.mp4',
             description: 'كانت تجربتنا مع Sirus رائعة! لقد ساعدونا في الوصول إلى جمهور جديد وتحقيق نتائج مذهلة.',
             author: 'سارة، مديرة تسويق'
         },
         {
-            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-woman-in-a-blazer-working-on-a-laptop-42588-large.mp4',
+            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-woman-in-a-cafe-working-on-a-laptop-4235-large.mp4',
             description: 'فريق مبدع ومحترف. لقد فهموا رؤيتنا تمامًا وترجموها إلى محتوى بصري جذاب.',
             author: 'أحمد، مؤسس شركة ناشئة'
         },
         {
-            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-man-in-a-checked-shirt-uses-his-phone-in-a-room-42571-large.mp4',
+            videoSrc: 'https://assets.mixkit.co/videos/preview/mixkit-man-sitting-at-a-desk-and-working-on-a-laptop-4238-large.mp4',
             description: 'الجودة والالتزام بالمواعيد هما ما يميز Sirus. أنصح بهم بشدة!',
             author: 'فاطمة، صاحبة علامة تجارية'
         }
@@ -67,7 +66,7 @@ const Index = () => {
             <section className="relative h-[600px] md:h-[700px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]">
                     <video autoPlay muted loop playsInline className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.4] grayscale-[0.2]">
-                        <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-woman-opening-a-vr-helmet-42111-large.mp4" type="video/mp4" />
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-technology-background-with-hud-elements-42878-large.mp4" type="video/mp4" />
                         متصفحك لا يدعم تشغيل الفيديو.
                     </video>
                     <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
@@ -96,7 +95,7 @@ const Index = () => {
                     <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl card-glow border border-purple-500/30">
                         <div className="aspect-video bg-black rounded-xl">
                             <video controls playsInline loop className="w-full h-full object-cover rounded-xl">
-                                <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-making-a-video-for-her-social-media-47841-large.mp4" type="video/mp4" />
+                                <source src="https://assets.mixkit.co/videos/preview/mixkit-a-man-and-a-woman-working-on-a-project-42880-large.mp4" type="video/mp4" />
                                 متصفحك لا يدعم تشغيل الفيديو.
                             </video>
                         </div>
@@ -244,4 +243,3 @@ const Index = () => {
 };
 
 export default Index;
-

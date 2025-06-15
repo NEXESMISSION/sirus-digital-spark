@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Play, Camera, Video, PenTool, Star, Users, Globe } from "lucide-react";
@@ -22,7 +21,7 @@ const Portfolio = () => {
       title: "حملة إعلانية - ملابس عصرية",
       category: "video",
       type: "فيديو إعلاني",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Video+Project+1",
       description: "حملة إعلانية متكاملة لعلامة تجارية للملابس العصرية"
     },
     {
@@ -30,7 +29,7 @@ const Portfolio = () => {
       title: "تصوير منتجات - مجوهرات فاخرة",
       category: "photography",
       type: "تصوير منتجات",
-      videoUrl: "https://www.youtube.com/embed/ScMzIvxBSi4",
+      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Photography+1",
       description: "جلسة تصوير احترافية لمجموعة مجوهرات فاخرة"
     },
     {
@@ -38,7 +37,7 @@ const Portfolio = () => {
       title: "فيديو تعريفي - منصة تقنية",
       category: "video",
       type: "فيديو تعريفي",
-      videoUrl: "https://www.youtube.com/embed/jNQXAC9IVRw",
+      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Video+Project+2",
       description: "فيديو تعريفي لمنصة تقنية ناشئة في السوق التونسي"
     },
     {
@@ -46,7 +45,7 @@ const Portfolio = () => {
       title: "بناء هوية - مقهى تراثي",
       category: "branding",
       type: "هوية تجارية",
-      videoUrl: "https://www.youtube.com/embed/kJQP7kiw5Fk",
+      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Branding+1",
       description: "تطوير هوية بصرية متكاملة لمقهى تراثي في المدينة العتيقة"
     },
     {
@@ -54,7 +53,7 @@ const Portfolio = () => {
       title: "محتوى رقمي - مدرب حياة",
       category: "content",
       type: "محتوى تسويقي",
-      videoUrl: "https://www.youtube.com/embed/L_jWHffIx5E",
+      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Content+1",
       description: "استراتيجية محتوى رقمي شاملة لمدرب تطوير شخصي"
     },
     {
@@ -62,7 +61,7 @@ const Portfolio = () => {
       title: "تصوير فعاليات - مؤتمر تقني",
       category: "photography",
       type: "تصوير فعاليات",
-      videoUrl: "https://www.youtube.com/embed/hFZFjoX2cGg",
+      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Photography+2",
       description: "تغطية شاملة لمؤتمر تقني دولي في تونس"
     },
     {
@@ -70,7 +69,7 @@ const Portfolio = () => {
       title: "إعلان تجاري - مطعم عائلي",
       category: "video",
       type: "إعلان تجاري",
-      videoUrl: "https://www.youtube.com/embed/ykwqXuMPsoc",
+      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Video+Project+3",
       description: "إعلان تجاري مؤثر لمطعم عائلي يقدم الأكل التونسي الأصيل"
     },
     {
@@ -78,7 +77,7 @@ const Portfolio = () => {
       title: "حملة رقمية - منتجات تجميل",
       category: "content",
       type: "حملة رقمية",
-      videoUrl: "https://www.youtube.com/embed/RgKAFK5djSk",
+      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Digital+Campaign+1",
       description: "حملة تسويقية رقمية متكاملة لخط منتجات تجميل طبيعية"
     }
   ];
@@ -151,16 +150,11 @@ const Portfolio = () => {
               <Card key={project.id} className="bg-slate-900/40 backdrop-blur-sm border border-purple-500/30 rounded-2xl overflow-hidden transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(72,187,255,0.5)] hover:scale-[1.03] group">
                 <CardContent className="p-0">
                   <div className="aspect-video relative overflow-hidden">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={`${project.videoUrl}?controls=0&showinfo=0&rel=0&modestbranding=1`}
-                      title={project.title}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    ></iframe>
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full">
                         <Play className="h-8 w-8 text-white" />
