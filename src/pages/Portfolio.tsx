@@ -106,9 +106,8 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-cyan-900/50"></div>
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="pt-32 pb-16">
+        <div className="container mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
               معرض أعمالنا
@@ -188,9 +187,8 @@ const Portfolio = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-purple-900/50"></div>
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="py-20">
+        <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-5xl font-semibold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
               هل أعجبك ما رأيت؟
@@ -215,7 +213,7 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-black/50 border-t border-white/10">
+      <footer className="py-12 border-t border-white/10">
         <div className="container mx-auto px-6">
           <div className="text-center">
             <div className="text-3xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
