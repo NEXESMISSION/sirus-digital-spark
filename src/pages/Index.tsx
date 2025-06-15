@@ -52,7 +52,7 @@ const Index = () => {
             {/* Header Section */}
             <header className="bg-[#1a083d] shadow-lg py-4 sticky top-0 z-20">
                 <div className="container mx-auto px-6 flex justify-between items-center">
-                    <a href="#" className="text-4xl font-extrabold text-white rounded-lg p-2 transform hover:scale-105 transition-transform duration-300">Sirus</a>
+                    <a href="#" className="text-4xl font-light font-cairo text-white rounded-lg p-2 transform hover:scale-105 transition-transform duration-300">Sirus</a>
                     <nav>
                         <ul className="flex space-x-6 space-x-reverse">
                             <li><a href="#about" className="text-gray-300 hover:text-purple-400 font-medium rounded-lg p-2">من نحن</a></li>
