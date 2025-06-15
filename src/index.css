@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,11 +97,11 @@
   }
   
   body {
-    @apply bg-[#0f172a] text-[#e0e0e0] font-tajawal font-light;
+    @apply bg-[#0f172a] text-[#e0e0e0] font-poppins font-light;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-cairo font-light;
+    @apply font-amiri font-bold;
   }
 }
 

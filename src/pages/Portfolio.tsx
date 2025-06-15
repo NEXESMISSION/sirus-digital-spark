@@ -110,10 +110,10 @@ const Portfolio = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-cyan-900/50"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent font-tajawal">
+            <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
               معرض أعمالنا
             </h1>
-            <p className="text-2xl text-gray-300 mb-8 font-tajawal font-light">
+            <p className="text-2xl text-gray-300 mb-8 font-light">
               مشاريع حقيقية، نتائج استثنائية، وقصص نجاح ملهمة
             </p>
           </div>
