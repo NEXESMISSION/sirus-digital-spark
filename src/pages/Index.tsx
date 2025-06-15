@@ -68,7 +68,7 @@ const Index = () => {
             {/* Hero Section */}
             <section className="relative h-[600px] md:h-[700px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]">
-                    <img src="https://quickframe.com/wp-content/uploads/2024/07/QF-Blog_Social-Media-Marketing_-Complete-Guide-for-Advertisers-2024_1920x1080.jpg" alt="Futuristic technology background" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.4] grayscale-[0.2]" />
+                    <img src="https://quickframe.com/wp-content/uploads/2024/07/QF-Blog_Social-Media-Marketing_-Complete-Guide-for-Advertisers-2024_1920x1080.jpg" alt="Futuristic technology background" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.4] grayscale-[0.7]" />
                     <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
                     <FlickeringStars numberOfStars={100} />
                 </div>
