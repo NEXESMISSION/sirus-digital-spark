@@ -22,7 +22,7 @@ const Portfolio = () => {
       title: "حملة إعلانية - ملابس عصرية",
       category: "video",
       type: "فيديو إعلاني",
-      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Video+Project+1",
+      imageUrl: "https://placehold.co/600x400/4c2882/ffffff?text=Video+Project+1",
       description: "حملة إعلانية متكاملة لعلامة تجارية للملابس العصرية"
     },
     {
@@ -30,7 +30,7 @@ const Portfolio = () => {
       title: "تصوير منتجات - مجوهرات فاخرة",
       category: "photography",
       type: "تصوير منتجات",
-      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Photography+1",
+      imageUrl: "https://placehold.co/600x400/4c2882/ffffff?text=Photography+1",
       description: "جلسة تصوير احترافية لمجموعة مجوهرات فاخرة"
     },
     {
@@ -38,7 +38,7 @@ const Portfolio = () => {
       title: "فيديو تعريفي - منصة تقنية",
       category: "video",
       type: "فيديو تعريفي",
-      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Video+Project+2",
+      imageUrl: "https://placehold.co/600x400/4c2882/ffffff?text=Video+Project+2",
       description: "فيديو تعريفي لمنصة تقنية ناشئة في السوق التونسي"
     },
     {
@@ -46,7 +46,7 @@ const Portfolio = () => {
       title: "بناء هوية - مقهى تراثي",
       category: "branding",
       type: "هوية تجارية",
-      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Branding+1",
+      imageUrl: "https://placehold.co/600x400/4c2882/ffffff?text=Branding+1",
       description: "تطوير هوية بصرية متكاملة لمقهى تراثي في المدينة العتيقة"
     },
     {
@@ -54,7 +54,7 @@ const Portfolio = () => {
       title: "محتوى رقمي - مدرب حياة",
       category: "content",
       type: "محتوى تسويقي",
-      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Content+1",
+      imageUrl: "https://placehold.co/600x400/4c2882/ffffff?text=Content+1",
       description: "استراتيجية محتوى رقمي شاملة لمدرب تطوير شخصي"
     },
     {
@@ -62,7 +62,7 @@ const Portfolio = () => {
       title: "تصوير فعاليات - مؤتمر تقني",
       category: "photography",
       type: "تصوير فعاليات",
-      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Photography+2",
+      imageUrl: "https://placehold.co/600x400/4c2882/ffffff?text=Photography+2",
       description: "تغطية شاملة لمؤتمر تقني دولي في تونس"
     },
     {
@@ -70,7 +70,7 @@ const Portfolio = () => {
       title: "إعلان تجاري - مطعم عائلي",
       category: "video",
       type: "إعلان تجاري",
-      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Video+Project+3",
+      imageUrl: "https://placehold.co/600x400/4c2882/ffffff?text=Video+Project+3",
       description: "إعلان تجاري مؤثر لمطعم عائلي يقدم الأكل التونسي الأصيل"
     },
     {
@@ -78,7 +78,7 @@ const Portfolio = () => {
       title: "حملة رقمية - منتجات تجميل",
       category: "content",
       type: "حملة رقمية",
-      imageUrl: "https://placehold.co/600x400/1e293b/ffffff?text=Digital+Campaign+1",
+      imageUrl: "https://placehold.co/600x400/4c2882/ffffff?text=Digital+Campaign+1",
       description: "حملة تسويقية رقمية متكاملة لخط منتجات تجميل طبيعية"
     }
   ];
@@ -93,11 +93,11 @@ const Portfolio = () => {
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-lg z-50 border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-3xl font-semibold bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] bg-clip-text text-transparent">
+            <Link to="/" className="text-3xl font-semibold text-gradient">
               Sirus
             </Link>
             <Link to="/">
-              <Button variant="outline" className="border-[#0CF4FF] text-[#0CF4FF] hover:bg-[#0CF4FF] hover:text-black">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                 <ArrowLeft className="ml-2 h-4 w-4" />
                 العودة للرئيسية
               </Button>
@@ -110,7 +110,7 @@ const Portfolio = () => {
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] bg-clip-text text-transparent">
+            <h1 className="text-6xl font-bold mb-6 text-gradient">
               معرض أعمالنا
             </h1>
             <p className="text-2xl text-gray-300 mb-8 font-light">
@@ -130,7 +130,7 @@ const Portfolio = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center px-5 py-2.5 rounded-full text-base font-medium transition-all duration-300 transform hover:scale-105 border ${
                   activeCategory === category.id
-                    ? 'bg-[#0CF4FF] border-[#0CF4FF] text-slate-900 shadow-lg'
+                    ? 'bg-primary border-primary text-primary-foreground shadow-lg'
                     : 'border-white/20 bg-transparent text-gray-300 hover:bg-white/10 hover:border-white/30'
                 }`}
               >
@@ -147,7 +147,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <Card key={project.id} className="bg-slate-900/40 backdrop-blur-sm border border-[#D900FF]/30 rounded-2xl overflow-hidden transition-all duration-300 hover:border-[#0CF4FF] hover:shadow-[0_0_25px_rgba(12,244,255,0.5)] hover:scale-[1.03] group">
+              <Card key={project.id} className="bg-slate-900/40 backdrop-blur-sm border border-secondary/30 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-[0_0_25px_theme(colors.primary/0.5)] hover:scale-[1.03] group">
                 <CardContent className="p-0">
                   <div className="aspect-video relative overflow-hidden">
                     <img
@@ -157,7 +157,7 @@ const Portfolio = () => {
                     />
                     {project.category === 'video' ? (
                         <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors">
-                            <div className="bg-red-600/90 h-12 w-20 rounded-lg flex items-center justify-center cursor-pointer group-hover:bg-red-500 transition-colors">
+                            <div className="bg-primary/90 h-12 w-20 rounded-lg flex items-center justify-center cursor-pointer group-hover:bg-primary transition-colors">
                                 <Play className="h-8 w-8 text-white" fill="white" />
                             </div>
                         </div>
@@ -168,7 +168,7 @@ const Portfolio = () => {
                             </div>
                         </div>
                     )}
-                    <div className="absolute top-4 right-4 bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-secondary px-3 py-1 rounded-full text-sm font-medium text-white">
                       {project.type}
                     </div>
                   </div>
@@ -191,7 +191,7 @@ const Portfolio = () => {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-5xl font-semibold mb-6 bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] bg-clip-text text-transparent">
+            <h2 className="text-5xl font-semibold mb-6 text-gradient">
               هل أعجبك ما رأيت؟
             </h2>
             <p className="text-xl text-gray-300 mb-8 font-light">
@@ -199,12 +199,12 @@ const Portfolio = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/#contact">
-                <Button className="bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] text-white px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                <Button className="bg-primary text-primary-foreground px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl hover:bg-primary/90">
                   ابدأ مشروعك الآن
                 </Button>
               </Link>
               <Link to="/">
-                <Button variant="outline" className="border-2 border-[#0CF4FF] text-[#0CF4FF] hover:bg-[#0CF4FF] hover:text-black px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105">
+                <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105">
                   تعرف علينا أكثر
                 </Button>
               </Link>
@@ -217,14 +217,14 @@ const Portfolio = () => {
       <footer className="py-12 border-t border-white/10">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <div className="text-3xl font-semibold bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] bg-clip-text text-transparent mb-4">
+            <div className="text-3xl font-semibold text-gradient mb-4">
               Sirus
             </div>
             <p className="text-gray-400 mb-6">© 2025 Sirus. جميع الحقوق محفوظة.</p>
             <div className="flex justify-center space-x-6 space-x-reverse">
-              <a href="#" className="text-gray-400 hover:text-[#0CF4FF] transition-colors text-lg">فيسبوك</a>
-              <a href="#" className="text-gray-400 hover:text-[#0CF4FF] transition-colors text-lg">إنستغرام</a>
-              <a href="#" className="text-gray-400 hover:text-[#0CF4FF] transition-colors text-lg">لينكدإن</a>
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors text-lg">فيسبوك</a>
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors text-lg">إنستغرام</a>
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors text-lg">لينكدإن</a>
             </div>
           </div>
         </div>

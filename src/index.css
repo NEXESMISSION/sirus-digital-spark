@@ -55,41 +55,41 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 4%; /* #0a0a0a */
+    --foreground: 0 0% 87.8%; /* #e0e0e0 */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 7%; /* #121212 */
+    --card-foreground: 0 0% 87.8%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 87.8%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 36 100% 50%; /* #ff9900 */
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 265 53% 33%; /* #4c2882 */
+    --secondary-foreground: 0 0% 87.8%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 36 100% 50%;
+    --accent-foreground: 0 0% 4%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 36 100% 50%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 36 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 36 100% 50%;
   }
 
   html {
@@ -97,7 +97,7 @@
   }
   
   body {
-    @apply bg-[#0a0a0a] text-[#e0e0e0] font-sans font-light;
+    @apply bg-background text-foreground font-sans font-light;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -107,51 +107,51 @@
 
 @layer components {
   .text-gradient {
-    background: linear-gradient(to right, #0CF4FF, #D900FF);
+    background: linear-gradient(to right, #ff9900, #ffcc80);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
   }
   .btn-primary {
-    @apply text-white font-bold py-3 px-8 rounded-full text-lg;
-    background: linear-gradient(to right, #0CF4FF, #D900FF); /* Vibrant button gradient */
+    @apply text-black font-bold py-3 px-8 rounded-full text-lg;
+    background: #ff9900;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(12, 244, 255, 0.4);
+    box-shadow: 0 5px 20px rgba(255, 153, 0, 0.4);
   }
   .btn-primary:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(12, 244, 255, 0.6);
+    box-shadow: 0 8px 25px rgba(255, 153, 0, 0.6);
+    background: #ffad33;
   }
   .btn-secondary {
     @apply font-bold py-3 px-8 rounded-full text-lg;
-    border: 2px solid #0CF4FF;
-    color: #0CF4FF;
+    border: 2px solid #ff9900;
+    color: #ff9900;
     background-color: transparent;
     transition: all 0.3s ease;
   }
   .btn-secondary:hover {
-    background-color: #0CF4FF;
-    color: #000000;
+    background-color: #ff9900;
+    color: #0a0a0a;
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 5px 20px rgba(12, 244, 255, 0.3);
+    box-shadow: 0 5px 20px rgba(255, 153, 0, 0.3);
   }
 
   .card-glow {
-    background-color: #110c1f; /* Darker card background */
-    box-shadow: 0 0 30px rgba(217, 0, 255, 0.1), 0 8px 25px rgba(0, 0, 0, 0.2);
+    background-color: hsl(var(--card));
+    box-shadow: 0 0 30px rgba(76, 40, 130, 0.3), 0 8px 25px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(217, 0, 255, 0.2); /* Subtle border */
+    border: 1px solid rgba(76, 40, 130, 0.4);
   }
   .card-glow:hover {
     transform: translateY(-7px) scale(1.02);
-    box-shadow: 0 0 45px rgba(12, 244, 255, 0.3), 0 12px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 45px rgba(255, 153, 0, 0.3), 0 12px 35px rgba(0, 0, 0, 0.3);
   }
 }
 
 @layer utilities {
     .bg-main-gradient {
-        background: linear-gradient(145deg, #0a0a0a 0%, #171717 100%);
+        background: linear-gradient(145deg, #0a0a0a 0%, #121212 100%);
     }
 }
-
