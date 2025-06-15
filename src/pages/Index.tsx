@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -8,6 +9,7 @@ const Index = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        phone: '',
         message: ''
     });
 
@@ -15,7 +17,7 @@ const Index = () => {
         e.preventDefault();
         console.log(formData);
         toast.success("تم إرسال رسالتك بنجاح! سنتواصل معك قريباً");
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '' });
     };
 
     const benefits = [
@@ -212,11 +214,49 @@ const Index = () => {
                             <input type="email" id="email" name="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="بريدك الإلكتروني" required />
                         </div>
                         <div className="mb-6">
+                            <label htmlFor="phone" className="block text-foreground text-sm font-bold mb-2">رقم الهاتف:</label>
+                            <input type="tel" id="phone" name="phone" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="shadow-inner appearance-none border border-input rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="رقم هاتفك (اختياري)" />
+                        </div>
+                        <div className="mb-6">
                             <label htmlFor="message" className="block text-foreground text-sm font-bold mb-2">رسالتك:</label>
                             <textarea id="message" name="message" rows={6} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="اكتب رسالتك هنا..." required></textarea>
                         </div>
                         <button type="submit" className="btn-primary w-full">أرسل رسالتك</button>
                     </form>
+
+                    <div className="mt-20">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">تواصل معنا الآن</h3>
+                        <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light text-muted-foreground">
+                            اختر الطريقة المناسبة للتواصل معنا والحصول على استشارة مجانية
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                            {/* WhatsApp Card */}
+                            <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right flex flex-col">
+                                <h4 className="text-2xl font-bold text-foreground mb-2">واتساب</h4>
+                                <p className="text-muted-foreground mb-4">تواصل فوري ومباشر</p>
+                                <div className="flex-grow">
+                                  <p className="font-mono text-lg text-primary">+216 58 415 520</p>
+                                  <p className="text-muted-foreground my-1">أو</p>
+                                  <p className="font-mono text-lg text-primary mb-6">+216 58 415 501</p>
+                                </div>
+                                <a href="https://wa.me/21658415520" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full">
+                                    ابدأ المحادثة
+                                </a>
+                            </div>
+
+                            {/* Instagram Card */}
+                            <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right flex flex-col">
+                                <h4 className="text-2xl font-bold text-foreground mb-2">انستغرام</h4>
+                                <p className="text-muted-foreground mb-4">شاهد أعمالنا ومشاريعنا</p>
+                                <div className="flex-grow">
+                                    <p className="font-mono text-lg text-primary mb-6">@Sirus_Tn</p>
+                                </div>
+                                <a href="https://instagram.com/Sirus_Tn" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full">
+                                    زر صفحتنا
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
