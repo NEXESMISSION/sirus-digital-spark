@@ -1,7 +1,9 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import YoutubeMockup from "@/components/YoutubeMockup";
+import FlickeringStars from "@/components/FlickeringStars";
 
 const Index = () => {
     const [formData, setFormData] = useState({
@@ -68,6 +70,7 @@ const Index = () => {
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]">
                     <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop" alt="Futuristic technology background" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.4] grayscale-[0.2]" />
                     <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
+                    <FlickeringStars numberOfStars={100} />
                 </div>
                 <div className="relative z-10 container mx-auto px-4 text-white">
                     <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight rounded-lg drop-shadow-lg">
