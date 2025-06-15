@@ -155,42 +155,54 @@ const Index = () => {
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="font-bold mb-8 sm:mb-12 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)' }}>يثق بنا</h2>
                     
-                    {/* Animated Carousel */}
+                    {/* Seamless Continuous Carousel */}
                     <div className="relative max-w-6xl mx-auto">
                         <div className="flex overflow-hidden">
-                            <div className="flex animate-[scroll_15s_linear_infinite] hover:pause">
+                            <div className="flex animate-[scroll_20s_linear_infinite] hover:pause">
                                 {/* First set of logos */}
                                 {trustedLogos.map((logo, index) => (
-                                    <div key={`first-${index}`} className="flex-shrink-0 mx-4 sm:mx-6 lg:mx-8">
-                                        <div className="flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-background rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50 transform hover:scale-110 hover:-translate-y-2 group">
+                                    <div key={`first-${index}`} className="flex-shrink-0 mx-3 sm:mx-4 lg:mx-6">
+                                        <div className="flex items-center justify-center p-3 sm:p-4 lg:p-6 bg-background rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50 transform hover:scale-110 hover:-translate-y-2 group">
                                             <img 
                                                 src={logo.url} 
                                                 alt={logo.alt}
-                                                className="h-8 sm:h-10 lg:h-12 w-auto max-w-[120px] object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 filter grayscale group-hover:grayscale-0"
+                                                className="h-6 sm:h-8 lg:h-10 w-auto max-w-[100px] sm:max-w-[120px] object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 filter grayscale group-hover:grayscale-0"
                                             />
                                         </div>
                                     </div>
                                 ))}
                                 {/* Second set for seamless loop */}
                                 {trustedLogos.map((logo, index) => (
-                                    <div key={`second-${index}`} className="flex-shrink-0 mx-4 sm:mx-6 lg:mx-8">
-                                        <div className="flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-background rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50 transform hover:scale-110 hover:-translate-y-2 group">
+                                    <div key={`second-${index}`} className="flex-shrink-0 mx-3 sm:mx-4 lg:mx-6">
+                                        <div className="flex items-center justify-center p-3 sm:p-4 lg:p-6 bg-background rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50 transform hover:scale-110 hover:-translate-y-2 group">
                                             <img 
                                                 src={logo.url} 
                                                 alt={logo.alt}
-                                                className="h-8 sm:h-10 lg:h-12 w-auto max-w-[120px] object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 filter grayscale group-hover:grayscale-0"
+                                                className="h-6 sm:h-8 lg:h-10 w-auto max-w-[100px] sm:max-w-[120px] object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 filter grayscale group-hover:grayscale-0"
                                             />
                                         </div>
                                     </div>
                                 ))}
                                 {/* Third set for extra smoothness */}
                                 {trustedLogos.map((logo, index) => (
-                                    <div key={`third-${index}`} className="flex-shrink-0 mx-4 sm:mx-6 lg:mx-8">
-                                        <div className="flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-background rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50 transform hover:scale-110 hover:-translate-y-2 group">
+                                    <div key={`third-${index}`} className="flex-shrink-0 mx-3 sm:mx-4 lg:mx-6">
+                                        <div className="flex items-center justify-center p-3 sm:p-4 lg:p-6 bg-background rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50 transform hover:scale-110 hover:-translate-y-2 group">
                                             <img 
                                                 src={logo.url} 
                                                 alt={logo.alt}
-                                                className="h-8 sm:h-10 lg:h-12 w-auto max-w-[120px] object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 filter grayscale group-hover:grayscale-0"
+                                                className="h-6 sm:h-8 lg:h-10 w-auto max-w-[100px] sm:max-w-[120px] object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 filter grayscale group-hover:grayscale-0"
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                                {/* Fourth set for perfect continuity */}
+                                {trustedLogos.map((logo, index) => (
+                                    <div key={`fourth-${index}`} className="flex-shrink-0 mx-3 sm:mx-4 lg:mx-6">
+                                        <div className="flex items-center justify-center p-3 sm:p-4 lg:p-6 bg-background rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50 transform hover:scale-110 hover:-translate-y-2 group">
+                                            <img 
+                                                src={logo.url} 
+                                                alt={logo.alt}
+                                                className="h-6 sm:h-8 lg:h-10 w-auto max-w-[100px] sm:max-w-[120px] object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 filter grayscale group-hover:grayscale-0"
                                             />
                                         </div>
                                     </div>
@@ -199,8 +211,8 @@ const Index = () => {
                         </div>
                         
                         {/* Gradient overlays for fade effect */}
-                        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-card to-transparent pointer-events-none"></div>
-                        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-card to-transparent pointer-events-none"></div>
+                        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-r from-card to-transparent pointer-events-none"></div>
+                        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-l from-card to-transparent pointer-events-none"></div>
                     </div>
                     
                     {/* Floating elements for extra visual appeal */}
