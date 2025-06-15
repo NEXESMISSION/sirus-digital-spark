@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -66,7 +67,7 @@ const Index = () => {
             <section className="relative h-[600px] md:h-[700px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]">
                     <video autoPlay muted loop playsInline className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.4] grayscale-[0.2]">
-                        <source src="https://assets.mixkit.co/videos/preview/mixkit-business-team-in-a-meeting-3461-large.mp4" type="video/mp4" />
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-woman-opening-a-vr-helmet-42111-large.mp4" type="video/mp4" />
                         متصفحك لا يدعم تشغيل الفيديو.
                     </video>
                     <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
@@ -86,11 +87,11 @@ const Index = () => {
             </section>
 
             {/* Social Media Video Section */}
-            <section id="social-video" className="py-16 md:py-24">
+            <section id="intro-video" className="py-16 md:py-24">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gradient">شاهد إبداعنا على السوشيال ميديا</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gradient">فيديو تعريفي بفريقنا</h2>
                     <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light opacity-90">
-                        نصنع محتوى عصري وجذاب يحقق انتشاراً واسعاً. شاهد كيف نترجم الأفكار إلى فيديوهات تحقق ملايين المشاهدات.
+                        تعرف على الشغف والإبداع خلف Sirus. هذا الفيديو يلقي نظرة على من نحن وما الذي يدفعنا لمساعدتك على النجاح.
                     </p>
                     <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl card-glow border border-purple-500/30">
                         <div className="aspect-video bg-black rounded-xl">
@@ -243,3 +244,4 @@ const Index = () => {
 };
 
 export default Index;
+
