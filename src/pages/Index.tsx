@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -184,11 +185,11 @@ const Index = () => {
                     <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light text-muted-foreground">
                         نجمع بين الإبداع، الخبرة المحلية، وأحدث التقنيات لنضمن تألق علامتك التجارية.
                     </p>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-4xl mx-auto px-8">
                         {benefits.map((benefit, index) => (
-                            <div key={index} className="flex flex-col items-center space-y-3 transform hover:scale-110 transition-transform duration-300">
-                                <div className="text-5xl">{benefit.icon}</div>
-                                <h3 className="text-lg font-bold text-foreground text-center">{benefit.title}</h3>
+                            <div key={index} className="flex flex-col items-center space-y-2 p-4 transform hover:scale-110 transition-transform duration-300">
+                                <div className="text-3xl">{benefit.icon}</div>
+                                <h3 className="text-sm font-bold text-foreground text-center">{benefit.title}</h3>
                             </div>
                         ))}
                     </div>
