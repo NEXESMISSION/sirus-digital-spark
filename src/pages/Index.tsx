@@ -14,7 +14,6 @@ const Index = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Here you would typically send the form data to a server
         console.log(formData);
         toast.success("تم إرسال رسالتك بنجاح! سنتواصل معك قريباً");
         setFormData({ name: '', email: '', message: '' });
@@ -31,35 +30,35 @@ const Index = () => {
 
     const testimonials = [
         {
-            thumbnailUrl: 'https://placehold.co/360x640/4c2882/ffffff?text=شهادة+عميل+1',
+            thumbnailUrl: 'https://placehold.co/360x640/1a365d/00d4ff?text=شهادة+عميل+1',
             description: 'كانت تجربتنا مع Sirus رائعة! لقد ساعدونا في الوصول إلى جمهور جديد وتحقيق نتائج مذهلة.',
             author: 'سارة، مديرة تسويق'
         },
         {
-            thumbnailUrl: 'https://placehold.co/360x640/4c2882/ffffff?text=شهادة+عميل+2',
+            thumbnailUrl: 'https://placehold.co/360x640/1a365d/00d4ff?text=شهادة+عميل+2',
             description: 'فريق مبدع ومحترف. لقد فهموا رؤيتنا تمامًا وترجموها إلى محتوى بصري جذاب.',
             author: 'أحمد، مؤسس شركة ناشئة'
         },
         {
-            thumbnailUrl: 'https://placehold.co/360x640/4c2882/ffffff?text=شهادة+عميل+3',
+            thumbnailUrl: 'https://placehold.co/360x640/1a365d/00d4ff?text=شهادة+عميل+3',
             description: 'الجودة والالتزام بالمواعيد هما ما يميز Sirus. أنصح بهم بشدة!',
             author: 'فاطمة، صاحبة علامة تجارية'
         }
     ];
 
     return (
-        <div className="text-right">
+        <div className="text-right bg-background text-foreground">
             {/* Header Section */}
-            <header className="bg-secondary shadow-lg py-4 sticky top-0 z-20">
+            <header className="bg-card shadow-lg py-4 sticky top-0 z-20 border-b border-border">
                 <div className="container mx-auto px-6 flex justify-between items-center">
-                    <a href="#" className="text-4xl font-light font-cairo text-white rounded-lg p-2 transform hover:scale-105 transition-transform duration-300">Sirus</a>
+                    <a href="#" className="text-4xl font-bold font-cairo text-gradient rounded-lg p-2 transform hover:scale-105 transition-transform duration-300">Sirus</a>
                     <nav>
                         <ul className="flex space-x-6 space-x-reverse">
-                            <li><a href="#about" className="text-gray-300 hover:text-primary font-medium rounded-lg p-2">من نحن</a></li>
-                            <li><a href="#services" className="text-gray-300 hover:text-primary font-medium rounded-lg p-2">خدماتنا</a></li>
-                            <li><Link to="/portfolio" className="text-gray-300 hover:text-primary font-medium rounded-lg p-2">معرض أعمالنا</Link></li>
-                            <li><a href="#why-us" className="text-gray-300 hover:text-primary font-medium rounded-lg p-2">لماذا Sirus؟</a></li>
-                            <li><a href="#contact" className="text-gray-300 hover:text-primary font-medium rounded-lg p-2">تواصل معنا</a></li>
+                            <li><a href="#about" className="text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">من نحن</a></li>
+                            <li><a href="#services" className="text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">خدماتنا</a></li>
+                            <li><Link to="/portfolio" className="text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">معرض أعمالنا</Link></li>
+                            <li><a href="#why-us" className="text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">لماذا Sirus؟</a></li>
+                            <li><a href="#contact" className="text-muted-foreground hover:text-primary font-medium rounded-lg p-2 transition-colors">تواصل معنا</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -68,13 +67,13 @@ const Index = () => {
             {/* Hero Section */}
             <section className="relative h-[600px] md:h-[700px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]">
-                    <img src="https://quickframe.com/wp-content/uploads/2024/07/QF-Blog_Social-Media-Marketing_-Complete-Guide-for-Advertisers-2024_1920x1080.jpg" alt="Futuristic technology background" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.5]" />
-                    <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
+                    <img src="https://quickframe.com/wp-content/uploads/2024/07/QF-Blog_Social-Media-Marketing_-Complete-Guide-for-Advertisers-2024_1920x1080.jpg" alt="Futuristic technology background" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.3]" />
+                    <div className="absolute top-0 left-0 w-full h-full bg-hero-gradient opacity-80 z-0"></div>
                     <FlickeringStars numberOfStars={100} />
                 </div>
                 <div className="relative z-10 container mx-auto px-4 text-white">
                     <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight rounded-lg drop-shadow-lg">
-                        <span className="text-gradient">Sirus:</span> النجم الذي يضيء علامتك في الكون الرقمي
+                        <span className="text-gradient bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">Sirus:</span> النجم الذي يضيء علامتك في الكون الرقمي
                     </h1>
                     <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto rounded-lg font-light opacity-90">
                         من الفكرة إلى التألق: نصنع المحتوى الذي يحقق أهدافك ويجعلك تبرز.
@@ -90,27 +89,27 @@ const Index = () => {
             <section id="intro-video" className="py-16 md:py-24">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gradient">فيديو تعريفي بفريقنا</h2>
-                    <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light opacity-90">
+                    <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light text-muted-foreground">
                         تعرف على الشغف والإبداع خلف Sirus. هذا الفيديو يلقي نظرة على من نحن وما الذي يدفعنا لمساعدتك على النجاح.
                     </p>
                     <div className="max-w-4xl mx-auto">
-                        <YoutubeMockup thumbnailUrl="https://placehold.co/1280x720/4c2882/ffffff?text=فريق+Sirus" />
+                        <YoutubeMockup thumbnailUrl="https://placehold.co/1280x720/1a365d/00d4ff?text=فريق+Sirus" />
                     </div>
                 </div>
             </section>
 
             {/* About Us Section */}
-            <section id="about" className="py-16 md:py-24 bg-main-gradient rounded-xl mx-4 my-8 card-glow text-white">
+            <section id="about" className="py-16 md:py-24 bg-main-gradient rounded-xl mx-4 my-8 card-glow">
                 <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
                     <div className="md:w-1/2 mb-8 md:mb-0">
-                        <img src="https://placehold.co/600x400/ff9900/0a0a0a?text=فريق+Sirus+المبدع" alt="Creative Team" className="rounded-xl shadow-2xl w-full h-auto object-cover border-2 border-primary" />
+                        <img src="https://placehold.co/600x400/1a365d/00d4ff?text=فريق+Sirus+المبدع" alt="Creative Team" className="rounded-xl shadow-2xl w-full h-auto object-cover border-2 border-accent" />
                     </div>
                     <div className="md:w-1/2 md:pr-12 text-right">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-gradient">من نحن: <br /> الخبرة والإبداع معًا</h2>
-                        <p className="text-gray-300 text-lg mb-4 font-light">
+                        <p className="text-muted-foreground text-lg mb-4 font-light">
                             في Sirus، نحن وكالة إبداع محتوى بخبرة سنوات، نحول أفكارك إلى محتوى رقمي جذاب ومؤثر. فريقنا من المبدعين والمحترفين ملتزم بتحقيق أهدافك.
                         </p>
-                        <p className="text-gray-300 text-lg font-light">
+                        <p className="text-muted-foreground text-lg font-light">
                             نتولى كل تفاصيل مشروعك لضمان نتائج تتجاوز توقعاتك، ونجعلك تبرز في السوق التونسي والعالم الرقمي.
                         </p>
                     </div>
@@ -118,47 +117,47 @@ const Index = () => {
             </section>
 
             {/* Services Section */}
-            <section id="services" className="py-16 md:py-24 bg-secondary rounded-xl mx-4 my-8 card-glow text-white">
+            <section id="services" className="py-16 md:py-24 bg-card rounded-xl mx-4 my-8 card-glow border border-border">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gradient">خدماتنا الشاملة: نصنع محتواك من الألف إلى الياء</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Service Cards */}
                         <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-primary text-5xl mb-6">🎬</div>
-                            <h3 className="text-xl font-bold text-white mb-4">تصوير احترافي</h3>
-                            <p className="text-gray-300 font-light">نقدم تصوير فيديو وصور فوتوغرافية عالية الجودة، لبروز رسالتك.</p>
+                            <div className="text-accent text-5xl mb-6">🎬</div>
+                            <h3 className="text-xl font-bold text-foreground mb-4">تصوير احترافي</h3>
+                            <p className="text-muted-foreground font-light">نقدم تصوير فيديو وصور فوتوغرافية عالية الجودة، لبروز رسالتك.</p>
                         </div>
                         <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-primary text-5xl mb-6">✂️</div>
-                            <h3 className="text-xl font-bold text-white mb-4">مونتاج إبداعي</h3>
-                            <p className="text-gray-300 font-light">نحول المواد الخام إلى قصص بصرية جذابة ومحتوى ديناميكي.</p>
+                            <div className="text-accent text-5xl mb-6">✂️</div>
+                            <h3 className="text-xl font-bold text-foreground mb-4">مونتاج إبداعي</h3>
+                            <p className="text-muted-foreground font-light">نحول المواد الخام إلى قصص بصرية جذابة ومحتوى ديناميكي.</p>
                         </div>
                         <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-primary text-5xl mb-6">✍️</div>
-                            <h3 className="text-xl font-bold text-white mb-4">سرد قصصي ومحتوى</h3>
-                            <p className="text-gray-300 font-light">نبني السرد القصصي المقنع ونصنع المحتوى الكتابي الفعال.</p>
+                            <div className="text-accent text-5xl mb-6">✍️</div>
+                            <h3 className="text-xl font-bold text-foreground mb-4">سرد قصصي ومحتوى</h3>
+                            <p className="text-muted-foreground font-light">نبني السرد القصصي المقنع ونصنع المحتوى الكتابي الفعال.</p>
                         </div>
                         <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-primary text-5xl mb-6">💡</div>
-                            <h3 className="text-xl font-bold text-white mb-4">بناء العلامات التجارية</h3>
-                            <p className="text-gray-300 font-light">نصمم محتوى يعكس هويتك ويجذب جمهورك المستهدف.</p>
+                            <div className="text-accent text-5xl mb-6">💡</div>
+                            <h3 className="text-xl font-bold text-foreground mb-4">بناء العلامات التجارية</h3>
+                            <p className="text-muted-foreground font-light">نصمم محتوى يعكس هويتك ويجذب جمهورك المستهدف.</p>
                         </div>
                         <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-primary text-5xl mb-6">📈</div>
-                            <h3 className="text-xl font-bold text-white mb-4">حلول للعلامات التجارية</h3>
-                            <p className="text-gray-300 font-light">نخدم جميع أنواع العلامات التجارية لضمان محتوى فعال ومميز.</p>
+                            <div className="text-accent text-5xl mb-6">📈</div>
+                            <h3 className="text-xl font-bold text-foreground mb-4">حلول للعلامات التجارية</h3>
+                            <p className="text-muted-foreground font-light">نخدم جميع أنواع العلامات التجارية لضمان محتوى فعال ومميز.</p>
                         </div>
                         <div className="bg-main-gradient p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-primary text-5xl mb-6">🌟</div>
-                            <h3 className="text-xl font-bold text-white mb-4">إدارة العلامة الشخصية</h3>
-                            <p className="text-gray-300 font-light">نساعد الأفراد على بناء وتطوير حضورهم الرقمي.</p>
+                            <div className="text-accent text-5xl mb-6">🌟</div>
+                            <h3 className="text-xl font-bold text-foreground mb-4">إدارة العلامة الشخصية</h3>
+                            <p className="text-muted-foreground font-light">نساعد الأفراد على بناء وتطوير حضورهم الرقمي.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Testimonials Section */}
-            <section id="testimonials" className="py-16 md:py-24 text-white">
+            <section id="testimonials" className="py-16 md:py-24">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gradient">ماذا يقول عملاؤنا؟</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
@@ -170,7 +169,7 @@ const Index = () => {
                                     aspectRatio="aspect-[9/16]"
                                 />
                                 <blockquote className="mt-6 max-w-[280px]">
-                                    <p className="text-gray-300 text-lg font-light italic">"{testimonial.description}"</p>
+                                    <p className="text-muted-foreground text-lg font-light italic">"{testimonial.description}"</p>
                                     <cite className="block mt-2 font-bold not-italic text-primary">- {testimonial.author}</cite>
                                 </blockquote>
                             </div>
@@ -180,17 +179,17 @@ const Index = () => {
             </section>
 
             {/* Why Us Section */}
-            <section id="why-us" className="py-16 md:py-24 bg-main-gradient rounded-xl mx-4 my-8 card-glow text-white">
+            <section id="why-us" className="py-16 md:py-24 bg-main-gradient rounded-xl mx-4 my-8 card-glow">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">لماذا تختار Sirus؟</h2>
-                    <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light opacity-90">
+                    <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light text-muted-foreground">
                         نجمع بين الإبداع، الخبرة المحلية، وأحدث التقنيات لنضمن تألق علامتك التجارية.
                     </p>
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
                         {benefits.map((benefit, index) => (
                             <div key={index} className="flex flex-col items-center space-y-3 transform hover:scale-110 transition-transform duration-300">
                                 <div className="text-5xl">{benefit.icon}</div>
-                                <h3 className="text-lg font-bold text-white text-center">{benefit.title}</h3>
+                                <h3 className="text-lg font-bold text-foreground text-center">{benefit.title}</h3>
                             </div>
                         ))}
                     </div>
@@ -198,24 +197,24 @@ const Index = () => {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="py-16 md:py-24 bg-secondary text-white rounded-xl mx-4 my-8 card-glow">
+            <section id="contact" className="py-16 md:py-24 bg-card rounded-xl mx-4 my-8 card-glow border border-border">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">هل أنت مستعد للتألق؟ تواصل معنا اليوم!</h2>
-                    <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light opacity-90">
+                    <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light text-muted-foreground">
                         دع "Sirus" يكون شريكك في رحلة النجاح الرقمي. املأ النموذج أدناه وسنتواصل معك قريباً.
                     </p>
-                    <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-background/50 p-8 rounded-xl shadow-2xl text-right border border-border">
+                    <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-background p-8 rounded-xl shadow-2xl text-right border border-border">
                         <div className="mb-6">
-                            <label htmlFor="name" className="block text-gray-200 text-sm font-bold mb-2">الاسم الكامل:</label>
-                            <input type="text" id="name" name="name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="shadow-inner appearance-none border border-border rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="اسمك الكامل" required />
+                            <label htmlFor="name" className="block text-foreground text-sm font-bold mb-2">الاسم الكامل:</label>
+                            <input type="text" id="name" name="name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="اسمك الكامل" required />
                         </div>
                         <div className="mb-6">
-                            <label htmlFor="email" className="block text-gray-200 text-sm font-bold mb-2">البريد الإلكتروني:</label>
-                            <input type="email" id="email" name="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="shadow-inner appearance-none border border-border rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="بريدك الإلكتروني" required />
+                            <label htmlFor="email" className="block text-foreground text-sm font-bold mb-2">البريد الإلكتروني:</label>
+                            <input type="email" id="email" name="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="بريدك الإلكتروني" required />
                         </div>
                         <div className="mb-6">
-                            <label htmlFor="message" className="block text-gray-200 text-sm font-bold mb-2">رسالتك:</label>
-                            <textarea id="message" name="message" rows={6} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="shadow-inner appearance-none border border-border rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="اكتب رسالتك هنا..." required></textarea>
+                            <label htmlFor="message" className="block text-foreground text-sm font-bold mb-2">رسالتك:</label>
+                            <textarea id="message" name="message" rows={6} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="shadow-inner appearance-none border border-input rounded-lg w-full py-3 px-4 bg-input text-foreground leading-tight focus:outline-none focus:ring-2 focus:ring-ring" placeholder="اكتب رسالتك هنا..." required></textarea>
                         </div>
                         <button type="submit" className="btn-primary w-full">أرسل رسالتك</button>
                     </form>
@@ -223,13 +222,13 @@ const Index = () => {
             </section>
 
             {/* Footer Section */}
-            <footer className="bg-card text-gray-400 py-8 mt-12 rounded-t-3xl border-t border-secondary/30">
+            <footer className="bg-card text-muted-foreground py-8 mt-12 rounded-t-3xl border-t border-border">
                 <div className="container mx-auto px-4 text-center">
                     <p>&copy; 2025 Sirus. جميع الحقوق محفوظة.</p>
                     <div className="flex justify-center space-x-6 space-x-reverse mt-4">
-                        <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">فيسبوك</a>
-                        <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">إنستغرام</a>
-                        <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">لينكدإن</a>
+                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">فيسبوك</a>
+                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">إنستغرام</a>
+                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">لينكدإن</a>
                     </div>
                 </div>
             </footer>
