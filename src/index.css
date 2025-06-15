@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* ... keep existing code (:root and .dark definitions) */
 
 @layer base {
   :root {
@@ -107,7 +107,7 @@
 
 @layer components {
   .text-gradient {
-    background: linear-gradient(to right, #a78bfa, #c084fc);
+    background: linear-gradient(to right, #0CF4FF, #D900FF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -115,37 +115,37 @@
   }
   .btn-primary {
     @apply text-white font-bold py-3 px-8 rounded-full text-lg;
-    background: linear-gradient(to right, #a78bfa, #c084fc); /* Vibrant button gradient */
+    background: linear-gradient(to right, #0CF4FF, #D900FF); /* Vibrant button gradient */
     transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(167, 139, 250, 0.4);
+    box-shadow: 0 5px 20px rgba(12, 244, 255, 0.4);
   }
   .btn-primary:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(167, 139, 250, 0.6);
+    box-shadow: 0 8px 25px rgba(12, 244, 255, 0.6);
   }
   .btn-secondary {
     @apply font-bold py-3 px-8 rounded-full text-lg;
-    border: 2px solid #a78bfa;
-    color: #a78bfa;
+    border: 2px solid #0CF4FF;
+    color: #0CF4FF;
     background-color: transparent;
     transition: all 0.3s ease;
   }
   .btn-secondary:hover {
-    background-color: #a78bfa;
-    color: #ffffff;
+    background-color: #0CF4FF;
+    color: #000000;
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 5px 20px rgba(167, 139, 250, 0.3);
+    box-shadow: 0 5px 20px rgba(12, 244, 255, 0.3);
   }
 
   .card-glow {
-    background-color: #1a083d; /* Darker card background */
-    box-shadow: 0 0 30px rgba(167, 139, 250, 0.1), 0 8px 25px rgba(0, 0, 0, 0.2);
+    background-color: #110c1f; /* Darker card background */
+    box-shadow: 0 0 30px rgba(217, 0, 255, 0.1), 0 8px 25px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(167, 139, 250, 0.2); /* Subtle border */
+    border: 1px solid rgba(217, 0, 255, 0.2); /* Subtle border */
   }
   .card-glow:hover {
     transform: translateY(-7px) scale(1.02);
-    box-shadow: 0 0 45px rgba(167, 139, 250, 0.3), 0 12px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 45px rgba(12, 244, 255, 0.3), 0 12px 35px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -154,3 +154,4 @@
         background: linear-gradient(145deg, #0a0a0a 0%, #171717 100%);
     }
 }
+

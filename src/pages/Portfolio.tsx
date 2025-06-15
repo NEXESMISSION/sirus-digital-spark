@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Play, Camera, Video, PenTool, Star, Users, Globe } from "lucide-react";
@@ -92,11 +93,11 @@ const Portfolio = () => {
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-lg z-50 border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-3xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <Link to="/" className="text-3xl font-semibold bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] bg-clip-text text-transparent">
               Sirus
             </Link>
             <Link to="/">
-              <Button variant="outline" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black">
+              <Button variant="outline" className="border-[#0CF4FF] text-[#0CF4FF] hover:bg-[#0CF4FF] hover:text-black">
                 <ArrowLeft className="ml-2 h-4 w-4" />
                 العودة للرئيسية
               </Button>
@@ -109,7 +110,7 @@ const Portfolio = () => {
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
+            <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] bg-clip-text text-transparent">
               معرض أعمالنا
             </h1>
             <p className="text-2xl text-gray-300 mb-8 font-light">
@@ -129,7 +130,7 @@ const Portfolio = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center px-5 py-2.5 rounded-full text-base font-medium transition-all duration-300 transform hover:scale-105 border ${
                   activeCategory === category.id
-                    ? 'bg-cyan-400 border-cyan-400 text-slate-900 shadow-lg'
+                    ? 'bg-[#0CF4FF] border-[#0CF4FF] text-slate-900 shadow-lg'
                     : 'border-white/20 bg-transparent text-gray-300 hover:bg-white/10 hover:border-white/30'
                 }`}
               >
@@ -146,7 +147,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <Card key={project.id} className="bg-slate-900/40 backdrop-blur-sm border border-purple-500/30 rounded-2xl overflow-hidden transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(72,187,255,0.5)] hover:scale-[1.03] group">
+              <Card key={project.id} className="bg-slate-900/40 backdrop-blur-sm border border-[#D900FF]/30 rounded-2xl overflow-hidden transition-all duration-300 hover:border-[#0CF4FF] hover:shadow-[0_0_25px_rgba(12,244,255,0.5)] hover:scale-[1.03] group">
                 <CardContent className="p-0">
                   <div className="aspect-video relative overflow-hidden">
                     <img
@@ -167,7 +168,7 @@ const Portfolio = () => {
                             </div>
                         </div>
                     )}
-                    <div className="absolute top-4 right-4 bg-gradient-to-r from-cyan-500 to-purple-600 px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="absolute top-4 right-4 bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] px-3 py-1 rounded-full text-sm font-medium">
                       {project.type}
                     </div>
                   </div>
@@ -190,7 +191,7 @@ const Portfolio = () => {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-5xl font-semibold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-semibold mb-6 bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] bg-clip-text text-transparent">
               هل أعجبك ما رأيت؟
             </h2>
             <p className="text-xl text-gray-300 mb-8 font-light">
@@ -198,12 +199,12 @@ const Portfolio = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/#contact">
-                <Button className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                <Button className="bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] text-white px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl">
                   ابدأ مشروعك الآن
                 </Button>
               </Link>
               <Link to="/">
-                <Button variant="outline" className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105">
+                <Button variant="outline" className="border-2 border-[#0CF4FF] text-[#0CF4FF] hover:bg-[#0CF4FF] hover:text-black px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105">
                   تعرف علينا أكثر
                 </Button>
               </Link>
@@ -216,14 +217,14 @@ const Portfolio = () => {
       <footer className="py-12 border-t border-white/10">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <div className="text-3xl font-semibold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            <div className="text-3xl font-semibold bg-gradient-to-r from-[#0CF4FF] to-[#D900FF] bg-clip-text text-transparent mb-4">
               Sirus
             </div>
             <p className="text-gray-400 mb-6">© 2025 Sirus. جميع الحقوق محفوظة.</p>
             <div className="flex justify-center space-x-6 space-x-reverse">
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors text-lg">فيسبوك</a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors text-lg">إنستغرام</a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors text-lg">لينكدإن</a>
+              <a href="#" className="text-gray-400 hover:text-[#0CF4FF] transition-colors text-lg">فيسبوك</a>
+              <a href="#" className="text-gray-400 hover:text-[#0CF4FF] transition-colors text-lg">إنستغرام</a>
+              <a href="#" className="text-gray-400 hover:text-[#0CF4FF] transition-colors text-lg">لينكدإن</a>
             </div>
           </div>
         </div>
