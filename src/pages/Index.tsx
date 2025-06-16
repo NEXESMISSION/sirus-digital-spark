@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -33,17 +32,17 @@ const Index = () => {
 
     const testimonials = [
         {
-            thumbnailUrl: 'https://placehold.co/360x640/1a365d/00d4ff?text=شهادة+عميل+1',
+            thumbnailUrl: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
             description: 'ساعدونا في الوصول إلى جمهور جديد وتحقيق نتائج رائعة.',
             author: 'سارة، مديرة تسويق'
         },
         {
-            thumbnailUrl: 'https://placehold.co/360x640/1a365d/00d4ff?text=شهادة+عميل+2',
+            thumbnailUrl: 'https://img.youtube.com/vi/9bZkp7q19f0/maxresdefault.jpg',
             description: 'فهموا رؤيتنا تمامًا وترجموها إلى محتوى جذاب.',
             author: 'أحمد، مؤسس شركة ناشئة'
         },
         {
-            thumbnailUrl: 'https://placehold.co/360x640/1a365d/00d4ff?text=شهادة+عميل+3',
+            thumbnailUrl: 'https://img.youtube.com/vi/ScMzIvxBSi4/maxresdefault.jpg',
             description: 'الجودة والالتزام بالمواعيد هما ما يميز Sirus.',
             author: 'فاطمة، صاحبة علامة تجارية'
         }
@@ -127,10 +126,10 @@ const Index = () => {
                 )}
             </header>
 
-            {/* Hero Section with Mobile Optimization */}
+            {/* Hero Section with Real Background Image */}
             <section className="relative h-[500px] sm:h-[600px] lg:h-[700px] flex items-center justify-center text-center rounded-b-3xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]">
-                    <img src="https://abetterlemonadestand.com/wp-content/uploads/2020/09/Creating-DIY-Social-Media-Content.jpg" alt="Social media content creation background" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.3] saturate-[0.6]" />
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2339&q=80" alt="Creative content creation workspace" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover brightness-[0.3] saturate-[0.6]" />
                     <div className="absolute top-0 left-0 w-full h-full bg-hero-gradient opacity-80 z-0"></div>
                     <FlickeringStars numberOfStars={mobileMenuOpen ? 50 : 100} />
                 </div>
@@ -221,7 +220,7 @@ const Index = () => {
                 </div>
             </section>
 
-            {/* Social Media Video Section */}
+            {/* Social Media Video Section with Real YouTube Thumbnail */}
             <section id="intro-video" className="py-8 sm:py-12 lg:py-16 xl:py-24">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="font-bold mb-4 sm:mb-8 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>تعرف على فريقنا</h2>
@@ -230,52 +229,82 @@ const Index = () => {
                         اكتشف الشغف والإبداع خلف Sirus.
                     </p>
                     <div className="max-w-4xl mx-auto px-2 sm:px-0">
-                        <YoutubeMockup thumbnailUrl="https://placehold.co/1280x720/1a365d/00d4ff?text=فريق+Sirus" />
+                        <YoutubeMockup thumbnailUrl="https://img.youtube.com/vi/jNQXAC9IVRw/maxresdefault.jpg" />
                     </div>
                 </div>
             </section>
 
-            {/* Services Section with Mobile Grid */}
+            {/* Services Section with Background Images */}
             <section id="services" className="py-8 sm:py-12 lg:py-16 xl:py-24 bg-card rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow border border-border">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="font-bold mb-8 sm:mb-12 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>خدماتنا</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-                        {/* Service Cards */}
-                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">🎬</div>
-                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>تصوير احترافي</h3>
-                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>فيديو وصور عالية الجودة لبروز رسالتك.</p>
+                        {/* Service Cards with Background Images */}
+                        <div className="relative bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right overflow-hidden">
+                            <div className="absolute inset-0 opacity-10">
+                                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Professional filming" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="relative z-10">
+                                <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">🎬</div>
+                                <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>تصوير احترافي</h3>
+                                <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>فيديو وصور عالية الجودة لبروز رسالتك.</p>
+                            </div>
                         </div>
-                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">✂️</div>
-                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>مونتاج إبداعي</h3>
-                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نحول المواد الخام إلى قصص بصرية جذابة.</p>
+                        <div className="relative bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right overflow-hidden">
+                            <div className="absolute inset-0 opacity-10">
+                                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Video editing" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="relative z-10">
+                                <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">✂️</div>
+                                <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>مونتاج إبداعي</h3>
+                                <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نحول المواد الخام إلى قصص بصرية جذابة.</p>
+                            </div>
                         </div>
-                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">✍️</div>
-                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>محتوى وسرد</h3>
-                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>سرد مقنع ومحتوى كتابي فعال.</p>
+                        <div className="relative bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right overflow-hidden">
+                            <div className="absolute inset-0 opacity-10">
+                                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Content writing" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="relative z-10">
+                                <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">✍️</div>
+                                <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>محتوى وسرد</h3>
+                                <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>سرد مقنع ومحتوى كتابي فعال.</p>
+                            </div>
                         </div>
-                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">💡</div>
-                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>بناء العلامة التجارية</h3>
-                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>محتوى يعكس هويتك ويجذب جمهورك.</p>
+                        <div className="relative bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right overflow-hidden">
+                            <div className="absolute inset-0 opacity-10">
+                                <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Branding" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="relative z-10">
+                                <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">💡</div>
+                                <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>بناء العلامة التجارية</h3>
+                                <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>محتوى يعكس هويتك ويجذب جمهورك.</p>
+                            </div>
                         </div>
-                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">📈</div>
-                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>حلول شاملة</h3>
-                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نخدم جميع العلامات التجارية بمحتوى مميز.</p>
+                        <div className="relative bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right overflow-hidden">
+                            <div className="absolute inset-0 opacity-10">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Digital solutions" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="relative z-10">
+                                <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">📈</div>
+                                <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>حلول شاملة</h3>
+                                <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نخدم جميع العلامات التجارية بمحتوى مميز.</p>
+                            </div>
                         </div>
-                        <div className="bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right">
-                            <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">🌟</div>
-                            <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>العلامة الشخصية</h3>
-                            <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نساعدك على بناء حضورك الرقمي.</p>
+                        <div className="relative bg-main-gradient p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg card-glow text-right overflow-hidden">
+                            <div className="absolute inset-0 opacity-10">
+                                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Personal branding" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="relative z-10">
+                                <div className="text-accent text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 lg:mb-6">🌟</div>
+                                <h3 className="font-bold text-foreground mb-2 sm:mb-3 lg:mb-4" style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}>العلامة الشخصية</h3>
+                                <p className="text-muted-foreground font-light" style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>نساعدك على بناء حضورك الرقمي.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Testimonials Section with Mobile Carousel-like Layout */}
+            {/* Testimonials Section with Real YouTube Videos */}
             <section id="testimonials" className="py-8 sm:py-12 lg:py-16 xl:py-24">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="font-bold mb-8 sm:mb-12 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>ماذا يقول عملاؤنا؟</h2>
@@ -297,9 +326,12 @@ const Index = () => {
                 </div>
             </section>
 
-            {/* Why Us Section with Mobile Grid */}
-            <section id="why-us" className="py-8 sm:py-12 lg:py-16 xl:py-24 bg-main-gradient rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow">
-                <div className="container mx-auto px-4 text-center">
+            {/* Why Us Section with Background Image */}
+            <section id="why-us" className="relative py-8 sm:py-12 lg:py-16 xl:py-24 bg-main-gradient rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow overflow-hidden">
+                <div className="absolute inset-0 opacity-5">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Team collaboration" className="w-full h-full object-cover" />
+                </div>
+                <div className="relative z-10 container mx-auto px-4 text-center">
                     <h2 className="font-bold mb-8 sm:mb-12 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>لماذا تختار Sirus؟</h2>
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-6 max-w-4xl mx-auto px-2 sm:px-4 lg:px-8">
                         {benefits.map((benefit, index) => (
@@ -312,9 +344,12 @@ const Index = () => {
                 </div>
             </section>
 
-            {/* Contact Section with Mobile Form Layout */}
-            <section id="contact" className="py-8 sm:py-12 lg:py-16 xl:py-24 bg-card rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow border border-border">
-                <div className="container mx-auto px-4 text-center">
+            {/* Contact Section with Background Image */}
+            <section id="contact" className="relative py-8 sm:py-12 lg:py-16 xl:py-24 bg-card rounded-xl mx-2 sm:mx-4 my-4 sm:my-8 card-glow border border-border overflow-hidden">
+                <div className="absolute inset-0 opacity-5">
+                    <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Contact us" className="w-full h-full object-cover" />
+                </div>
+                <div className="relative z-10 container mx-auto px-4 text-center">
                     <h2 className="font-bold mb-4 sm:mb-6 text-gradient" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>تواصل معنا</h2>
                     <p className="mb-6 sm:mb-10 max-w-2xl mx-auto font-light text-muted-foreground"
                        style={{ fontSize: 'clamp(0.9rem, 2vw, 1.25rem)' }}>
