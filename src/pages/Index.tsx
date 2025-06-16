@@ -43,11 +43,11 @@ const Index = () => {
         }
     ];
 
-    const features = [
-        { icon: <Award className="w-6 h-6" />, text: "خبرة 5+ سنوات" },
-        { icon: <Users className="w-6 h-6" />, text: "100+ عميل راضٍ" },
-        { icon: <Star className="w-6 h-6" />, text: "جودة استثنائية" },
-        { icon: <Zap className="w-6 h-6" />, text: "تسليم سريع" }
+    const achievements = [
+        { icon: <Award className="w-8 h-8" />, number: "5+", text: "سنوات خبرة" },
+        { icon: <Users className="w-8 h-8" />, number: "100+", text: "عميل راضٍ" },
+        { icon: <Star className="w-8 h-8" />, number: "100%", text: "جودة استثنائية" },
+        { icon: <Zap className="w-8 h-8" />, number: "24h", text: "تسليم سريع" }
     ];
 
     return (
@@ -96,15 +96,22 @@ const Index = () => {
             </header>
 
             {/* Hero Section */}
-            <section className="pt-24 pb-16 px-4">
-                <div className="container mx-auto text-center">
+            <section 
+                className="pt-24 pb-16 px-4 relative bg-cover bg-center bg-no-repeat"
+                style={{
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(30, 58, 138, 0.4)), url('https://www.socialinsider.io/blog/content/images/2024/05/social-media-content-guide.webp')`,
+                    filter: 'saturate(0.7)'
+                }}
+            >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-purple-900/50"></div>
+                <div className="container mx-auto text-center relative z-10">
                     <div className="max-w-4xl mx-auto">
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+                            <span className="bg-gradient-to-r from-blue-200 via-purple-200 to-blue-100 bg-clip-text text-transparent">
                                 نضيء علامتك الرقمية
                             </span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                        <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
                             نحن نصنع المحتوى البصري الذي يحكي قصتك ويجذب جمهورك بطريقة استثنائية
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -112,7 +119,7 @@ const Index = () => {
                                 ابدأ مشروعك الآن
                                 <ArrowRight className="w-5 h-5 mr-2" />
                             </Button>
-                            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2">
+                            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900">
                                 شاهد أعمالنا
                                 <Play className="w-5 h-5 mr-2" />
                             </Button>
@@ -121,14 +128,17 @@ const Index = () => {
                 </div>
             </section>
 
-            {/* Features Bar */}
-            <section className="py-8 bg-white">
-                <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {features.map((feature, index) => (
-                            <div key={index} className="flex items-center justify-center gap-3 text-center">
-                                <div className="text-blue-600">{feature.icon}</div>
-                                <span className="text-gray-700 font-medium">{feature.text}</span>
+            {/* Achievements Section */}
+            <section className="py-16 bg-white relative -mt-8 mx-4 rounded-2xl shadow-2xl z-20">
+                <div className="container mx-auto px-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        {achievements.map((achievement, index) => (
+                            <div key={index} className="text-center group">
+                                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 mb-4 group-hover:scale-110 transition-transform">
+                                    {achievement.icon}
+                                </div>
+                                <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">{achievement.number}</div>
+                                <div className="text-gray-600 font-medium">{achievement.text}</div>
                             </div>
                         ))}
                     </div>
