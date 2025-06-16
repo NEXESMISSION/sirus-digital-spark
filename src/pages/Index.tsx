@@ -1,8 +1,7 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import { Menu, X, Play, ArrowRight, Star, Users, Award, Zap } from "lucide-react";
+import { Menu, X, Play, ArrowRight, Star, Users, Award, Zap, Camera, Edit3, Palette, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -22,24 +21,56 @@ const Index = () => {
 
     const services = [
         {
-            icon: <Play className="w-8 h-8" />,
+            icon: <Play className="w-12 h-12" />,
             title: "إنتاج الفيديو",
-            description: "فيديوهات احترافية عالية الجودة تحكي قصة علامتك التجارية"
+            description: "فيديوهات احترافية عالية الجودة تحكي قصة علامتك التجارية",
+            details: [
+                "إنتاج فيديوهات ترويجية احترافية",
+                "محتوى تفاعلي لوسائل التواصل الاجتماعي",
+                "فيديوهات تعريفية للشركات والمنتجات",
+                "تصوير المناسبات والفعاليات الخاصة"
+            ],
+            color: "from-red-500 to-pink-500",
+            bgColor: "from-red-50 to-pink-50"
         },
         {
-            icon: <Zap className="w-8 h-8" />,
+            icon: <Edit3 className="w-12 h-12" />,
             title: "المونتاج الإبداعي",
-            description: "مونتاج متقن يحول المحتوى العادي إلى تحف فنية"
+            description: "مونتاج متقن يحول المحتوى العادي إلى تحف فنية",
+            details: [
+                "مونتاج احترافي بأحدث البرامج",
+                "إضافة مؤثرات بصرية وصوتية مبتكرة",
+                "تصحيح الألوان وتحسين جودة الصورة",
+                "إنشاء قوالب فيديو قابلة للاستخدام المتكرر"
+            ],
+            color: "from-blue-500 to-cyan-500",
+            bgColor: "from-blue-50 to-cyan-50"
         },
         {
-            icon: <Star className="w-8 h-8" />,
+            icon: <Camera className="w-12 h-12" />,
             title: "التصوير الفوتوغرافي",
-            description: "صور استثنائية تعكس جمال وقوة رسالتك"
+            description: "صور استثنائية تعكس جمال وقوة رسالتك",
+            details: [
+                "تصوير المنتجات بجودة عالية",
+                "تصوير البورتريه والصور الشخصية",
+                "التصوير التجاري والإعلاني",
+                "معالجة وتحرير الصور الرقمية"
+            ],
+            color: "from-purple-500 to-indigo-500",
+            bgColor: "from-purple-50 to-indigo-50"
         },
         {
-            icon: <Users className="w-8 h-8" />,
+            icon: <Target className="w-12 h-12" />,
             title: "إدارة المحتوى",
-            description: "استراتيجية محتوى شاملة لبناء حضور قوي"
+            description: "استراتيجية محتوى شاملة لبناء حضور قوي",
+            details: [
+                "وضع خطط محتوى شهرية ومرنة",
+                "إدارة حسابات وسائل التواصل الاجتماعي",
+                "كتابة محتوى إبداعي وجذاب",
+                "تحليل الأداء وتحسين الوصول"
+            ],
+            color: "from-green-500 to-emerald-500",
+            bgColor: "from-green-50 to-emerald-50"
         }
     ];
 
@@ -95,19 +126,19 @@ const Index = () => {
                 )}
             </header>
 
-            {/* Hero Section - Increased height and spacing */}
+            {/* Hero Section - Updated with less saturated background and glowing headline */}
             <section 
                 className="pt-32 pb-32 px-4 min-h-screen flex items-center relative bg-cover bg-center bg-no-repeat"
                 style={{
                     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(30, 58, 138, 0.5)), url('https://www.socialinsider.io/blog/content/images/2024/05/social-media-content-guide.webp')`,
-                    filter: 'saturate(0.7)'
+                    filter: 'saturate(0.4)'
                 }}
             >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 to-purple-900/60"></div>
                 <div className="container mx-auto text-center relative z-10">
                     <div className="max-w-5xl mx-auto">
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-white drop-shadow-2xl">
-                            <span className="bg-gradient-to-r from-blue-200 via-purple-200 to-blue-100 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-blue-200 via-purple-200 to-blue-100 bg-clip-text text-transparent filter drop-shadow-[0_0_30px_rgba(255,255,255,0.8)] brightness-150">
                                 نضيء علامتك الرقمية
                             </span>
                         </h1>
@@ -128,7 +159,7 @@ const Index = () => {
                 </div>
             </section>
 
-            {/* Achievements Section - More compact */}
+            {/* Achievements Section */}
             <section className="py-12 bg-white relative -mt-16 mx-4 rounded-2xl shadow-2xl z-20">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -145,11 +176,11 @@ const Index = () => {
                 </div>
             </section>
 
-            {/* Services Section */}
-            <section id="services" className="py-20 px-4">
+            {/* Services Section - Completely redesigned */}
+            <section id="services" className="py-24 px-4">
                 <div className="container mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent drop-shadow-sm">
+                    <div className="text-center mb-20">
+                        <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent drop-shadow-sm">
                             خدماتنا المتميزة
                         </h2>
                         <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
@@ -157,15 +188,32 @@ const Index = () => {
                         </p>
                     </div>
                     
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid lg:grid-cols-2 gap-8">
                         {services.map((service, index) => (
-                            <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm shadow-lg">
-                                <CardContent className="p-8 text-center">
-                                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 text-blue-600 mb-6 group-hover:scale-110 transition-transform shadow-lg">
-                                        {service.icon}
+                            <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden relative">
+                                <div className={`absolute inset-0 bg-gradient-to-br ${service.bgColor} opacity-50`}></div>
+                                <CardContent className="p-8 relative z-10">
+                                    <div className="flex items-start gap-6 mb-6">
+                                        <div className={`flex-shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-r ${service.color} text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                                            {service.icon}
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-2xl font-bold mb-3 text-gray-800">{service.title}</h3>
+                                            <p className="text-gray-600 text-lg leading-relaxed">{service.description}</p>
+                                        </div>
                                     </div>
-                                    <h3 className="text-xl font-bold mb-4 text-gray-800 drop-shadow-sm">{service.title}</h3>
-                                    <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                                    
+                                    <div className="space-y-3">
+                                        <h4 className="text-lg font-semibold text-gray-800 mb-4">ما نقدمه لك:</h4>
+                                        <div className="grid gap-3">
+                                            {service.details.map((detail, detailIndex) => (
+                                                <div key={detailIndex} className="flex items-center gap-3 bg-white/70 rounded-lg p-3 backdrop-blur-sm">
+                                                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.color} flex-shrink-0`}></div>
+                                                    <span className="text-gray-700 font-medium">{detail}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </CardContent>
                             </Card>
                         ))}
